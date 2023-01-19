@@ -1,14 +1,14 @@
 # JoshPattani.github.io
 
 
-# ATLS2200_Web
+# **ATLS2200_Web**
 
-## Projects
-    - HTML
-    - CSS
-    - JS
+## **Projects**
+    * HTML
+    * CSS
+    * JS
 
-### In-class Assignments
+### **In-class Assignments**
     ICA1
     ICA2
     ICA3
@@ -24,7 +24,7 @@
     ICA14
     ICA15
 
-Weekly Assignments
+### **Weekly Assignments**
     WA1
     WA2
     WA3
