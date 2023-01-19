@@ -4,9 +4,9 @@
 # **ATLS2200_Web** #
 
 ## **Projects** ##
-    * HTML
-    * CSS
-    * JS
+* HTML
+* CSS
+* JS
 
 ## **In-class Assignments** ##
 * ICA1
