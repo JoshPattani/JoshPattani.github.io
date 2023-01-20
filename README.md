@@ -25,7 +25,7 @@
 * ICA15
 
 ## **Weekly Assignments** ##
-* WA1 - [WeeklyAssignment01](https://joshpattani.github.io/WA/wa1.html)
+* WA1 - [Technology Onboarding](https://joshpattani.github.io/WA/wa1.html)
 * WA2
 * WA3
 * WA4
