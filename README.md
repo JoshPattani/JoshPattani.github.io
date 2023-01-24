@@ -10,7 +10,7 @@
 
 ## **In-class Assignments** ##
 * ICA1 - [How to Search](https://docs.google.com/document/d/1Um7hc3AkKwjxERHVXjThMvFMICXAusV5HBCxQxE8VfI/edit?usp=sharing)
-* ICA2
+* ICA2 - [Exploring Directory Structures](https://docs.google.com/document/d/1aJCHCaD9oMPvfpOHO17c_BvsVY5Z3gslIAh_wdIA6g8/edit?usp=sharing)
 * ICA3
 * ICA4
 * ICA5
