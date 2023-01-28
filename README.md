@@ -26,7 +26,7 @@
 
 ## **Weekly Assignments** ##
 * WA1 - [Technology Onboarding](https://joshpattani.github.io/WA/wa1.html)
-* WA2
+* WA2 - [Hello Me](https://joshpattani.github.io/WA/wa2.html)
 * WA3
 * WA4
 * WA5
