@@ -4,7 +4,7 @@
 # **ATLS2200_Web** #
 
 ## **Projects** ##
-* HTML
+* HTML - [HTML](https://johpattani.github.io/html-midterm/page5.html)
 * CSS
 * JS
 
@@ -30,7 +30,7 @@
 * WA1 - [Technology Onboarding](https://joshpattani.github.io/WA/wa1.html)
 * WA2 - [Hello Me](https://joshpattani.github.io/WA/wa2.html)
 * WA3 - [Encyclopedia](https://joshpattani.github.io/WA/wa3.html)
-* WA4
+* WA4 - [Business Card](https://joshpattani.github.io/WA/wa4.html)
 * WA5
 * WA6
 * WA7
