@@ -4,7 +4,7 @@
 # **ATLS2200_Web** #
 
 ## **Projects** ##
-* HTML - [HTML](https://johpattani.github.io/html-midterm/page5.html)
+* HTML - [HTML](https://joshpattani.github.io/html-midterm/page5.html)
 * CSS
 * JS
 
