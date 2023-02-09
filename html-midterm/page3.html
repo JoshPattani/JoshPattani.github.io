@@ -15,10 +15,7 @@
     <title>Page 3</title>
 </head>
 <body>
-    <header>
-        <h1>Tables</h1>
-        <hr>
-    </header>
+
     <nav>
         <h2>Navigate</h2>
         <div class="navbar">
@@ -37,7 +34,7 @@
         </div>
     </nav>
     <main>
-        <h2>Table (information)</h2>
+        <h1>Table (information)</h1>
         <hr>
         <article>
           <p>
@@ -49,17 +46,17 @@
             Information or data conveyed in table form is said to be in tabular format (adjective). In books and technical articles, 
             tables are typically presented apart from the main text in numbered and captioned floating blocks.
           </p>
-        <h3>Basic Description</h3>
+        <h2>Basic Description</h2> <!--Fixed - h3 changed to h2-->
         <hr>
           <p>
-            A table consists of an ordered arrangement of rows and columns. 
+            A table consists of an ordered arrangement of <b>rows</b> and <b>columns</b>. 
             This is a simplified description of the most basic kind of table. 
             Certain considerations follow from this simplified description:
           </p>
           <ul>
             <li>the term row has several common synonyms</li>
             <li>the term column has several common synonyms (e.g., field, parameter, property, attribute, stanchion);</li>
-            <li>a column is usually identified by a name;</li>
+            <li>a column is usually identified by a name;</li> <!--Fixed - li tags were incorrect-->
             <li>a column name can consist of a word, phrase or a numerical index;</li>
             <li>the intersection of a row and a column is called a cell.</li>
           </ul>
@@ -67,16 +64,16 @@
             The elements of a table may be grouped, segmented, or arranged in many different ways, and even nested recursively. 
             Additionally, a table may include metadata, annotations, a header,[6] a footer or other ancillary features.
           </p>
-        <h3>Simple Table</h3>
-        <hr>
+        <h3><b>Simple Table</b></h3> <!--Fixed - h4 changed to h3, <b> element added-->
+
           <p>
             The following illustrates a simple table with three columns and nine rows. 
             The first row is not counted, because it is only used to display the column names. 
             This is called a "header row".
           </p>
-        <table>
-            <caption>
-                <p><em>Full names and ages</em></p>
+        <table> <!--Fixed - table data was misorded-->
+            <caption> <!--Fixed - Added caption-->
+                <p>Age table</p>
             </caption>
             <tr>
                 <th>First name</th>
@@ -90,11 +87,11 @@
             </tr>
             <tr>
                 <td>Javier</td>
-                <td>Zapata</td>
+                <td>Zapata</td> <!--Fixed - incorrect use of <th> tags-->
                 <td>28</td>
             </tr>
             <tr>
-                <td>Lily</td>
+                <td>Lily</td> <!--Fixed - closing </td> tag error-->
                 <td>McGarrett</td>
                 <td>36</td>
             </tr>
@@ -109,7 +106,7 @@
                 <td>22</td>
             </tr>
             <tr>
-                <td>Axelia</td>
+                <td>Axelia</td> <!--Fixed - was outside of row element tags-->
                 <td>Athanasios</td>
                 <td>22</td>
             </tr>
