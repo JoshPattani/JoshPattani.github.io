@@ -31,7 +31,7 @@
 * WA2 - [Hello Me](https://joshpattani.github.io/WA/wa2.html)
 * WA3 - [Encyclopedia](https://joshpattani.github.io/WA/wa3.html)
 * WA4 - [Business Card](https://joshpattani.github.io/WA/wa4.html)
-* WA5
+* WA5 - [Image Overlay](https://joshpattani.github.io/WA/wa5.html)
 * WA6
 * WA7
 * WA8
