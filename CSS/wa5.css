@@ -9,13 +9,12 @@ body {
 }
 
 article {
-    width: 840px;
-    height: 420px;
+    width: 484px;
+    height: 272px;
     padding: 20px;
     position: absolute;
 }
 
-/* Image container */
 .container {
     width: 100%;
     max-width: 100%;
@@ -25,87 +24,68 @@ article {
     box-sizing: inherit;
 }
 
-/* Background image */
-#spyBalloon{
-    background-image: url(../img/spyBalloon.jpg);
-    background-repeat: no-repeat;
-    background-position: top left 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    box-sizing: inherit;
-}
-
-/* Header news banner */
-#header{
-    background-image: url(../img/upperBanner.png);
+#image{
+    background-image: url(../img/willFerrell.jpg);
     background-repeat: no-repeat;
     background-position: top left 0;
     background-size: 100% 100%;
-    width: 95.5%;
-    height: 10%;
-    position: absolute;
-    box-sizing: inherit;
-}
-
-/* Header news flash text */
-#headerLine{
-    font-family: inherit;
-    font-size: 1.6em;
-    color: white;
-    position: absolute;
-    padding: 0;
-    top: -50%;
-    left: 6%;
     width: 100%;
     height: 100%;
+    position: absolute;
 }
 
-/* Text box */
-#caption{
-    background-image: url(../img/textFrame.png);
+#score {
+    background-image: url(../img/scoreBoard.png);
     background-repeat: no-repeat;
-    background-size: 40% 60%;
-    background-position: top 35% left 10%;
+    background-position: top 2% left 2%;
+    background-size: 50% 12%;
     width: 100%;
     height: 100%;
     position: absolute;
-    box-sizing: inherit;
 }
 
-/* Quote text */
-#quote{
-    font-family: inherit;
-    font-size: 1.19em;
-    color: white;
+#team1 {
+    color: black;
+    font-size: 1.05em;
+    font-weight: bolder;
     position: absolute;
-    top: 13%;
+    top: 4.20%;
     left: 8%;
-    width: 35%;
-    height: 50%;
 }
 
-/* Footer news banner */
-#footer{
-    background-image: url(../img/lowerThird.png);
-    background-repeat: no-repeat;
-    background-position: top 90% left 0;
-    background-size: 95% 12%;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    box-sizing: inherit;
-}
-
-/* Footer news flash text */
-#footerLine{
-    font-family: inherit;
-    font-size: 1.65em;
-    font-weight: 950;
+#score1 {
     color: white;
+    font-size: 1.5em;
+    font-weight: bold;
     position: absolute;
-    top: 77.5%;
-    left: 2.5%;
+    top: 3%;
+    left: 3%;
+}
+
+#team2 {
+    color: black;
+    font-size: 1.05em;
+    font-weight: bolder;
+    position: absolute;
+    top: 4.20%;
+    left: 30%;
+}
+
+#score2 {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    top: 3%;
+    left: 46.25%;
+}
+
+#logo {
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-position: top 99% left 99%;
+    background-size: 20% 10%;
     width: 100%;
     height: 100%;
+    position: absolute;
 }
