@@ -1,0 +1,51 @@
+body{
+    background-color: beige;
+}
+
+#box1{
+    border-style:solid;
+    width: 40vw;
+    height: 33vh;
+    border-color:rgba(20, 250, 173,10);
+    border-width: 3px;
+    border-radius:10px;
+    background-color: mediumseagreen;
+    position:relative;
+}
+
+/* Position text outside of div */
+#text1{
+    left: 120%;
+    position: relative;
+}
+
+#box2{
+    width: 73vw;
+    height: 33vh;
+    border-style: solid;
+    border-radius:3px;
+    border-color:purple;
+    position:relative;
+    left: 40vw;
+    background-color: mediumvioletred;
+}
+
+/* Position text in bottom left of div */
+#text2{
+    position: absolute;
+    top: 27vh;
+}
+
+#box3{
+    width: 73vw;
+    height: 175vh;
+    border-radius: 10px;
+    background-color: orangered;
+}
+
+/* Stick text to top of screen while scrolling */
+#text3{
+    position: sticky;
+    top: 0;
+    font-size: xx-large;
+}

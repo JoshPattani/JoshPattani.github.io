@@ -1,0 +1,101 @@
+body{
+    background-color: olive;
+}
+
+#flex-parent{
+    display:flex;
+    background-color: orangered;
+}
+
+#flex-parent p{
+    padding:5vw;
+}
+
+/* Flex children positioning */
+#flex-child1{
+    order: 3;
+}
+
+#flex-child2 {
+    order: 4;
+}
+
+#flex-child3 {
+    order: 2;
+}
+
+#flex-child4 {
+    order: 1;
+}
+
+/* Grid Template */
+#grid-parent{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 0;
+}
+
+#grid-parent h1{
+    background-color: grey;
+    padding:3vw 5vh;
+    margin:5vw;
+    text-align: center;
+}
+
+/* playing with hover on grid keypad */
+#grid-parent h1:hover{
+    background-color:  orangered;
+    color: white;
+}
+
+/* Keypad positioning of grid children */
+#no1{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+#no2{
+    grid-row: 1;
+    grid-column: 2;
+}
+
+#no3{
+    grid-row: 1;
+    grid-column: 3;
+}
+
+#no4{
+    grid-row: 2;
+    grid-column: 1;
+}
+
+#no5{
+    grid-row: 2;
+    grid-column: 2;
+}
+
+#no6{
+    grid-row: 2;
+    grid-column: 3;
+}
+
+#no7{
+    grid-row: 3;
+    grid-column: 1;
+}
+
+#no8{
+    grid-row: 3;
+    grid-column: 2;
+}
+
+#no9{
+    grid-row: 3;
+    grid-column: 3;
+}
+
+#no0{
+    grid-row: 4;
+    grid-column: 2;
+}
