@@ -16,7 +16,7 @@
   * [(b) Page Structure](https://joshpattani.github.io/ICA/ica3b.html)
 * ICA4 - [CSS Intro](https://joshPattani.github.io/ICA/ica4.html)
 * ICA5 - [CSS letterhead](https://joshPattani.github.io/ICA/ica5.html)
-* ICA6 - [CSS Layouts](https://joshPattani.github.io\ICA\ica6\ica6-part1.html)
+* ICA6 - [CSS Layouts](https://joshpattani.github.io/ICA/ica6/ica6-part1.html)
 * ICA7
 * ICA8
 * ICA9
