@@ -33,7 +33,7 @@
 * WA4 - [Business Card](https://joshpattani.github.io/WA/wa4.html)
 * WA5 - [Image Overlay](https://joshpattani.github.io/WA/wa5.html)
 * WA6 - [CSS Layout](https://joshpattani.github.io/WA/wa6/index.html)
-* WA7
+* WA7 - [CSS Animation](https://joshpattani.github.io/WA/wa7.html)
 * WA8
 * WA9
 * WA10
