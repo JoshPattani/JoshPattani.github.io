@@ -3,7 +3,6 @@ body{
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient(45deg,  rgb(45, 48, 71), rgb(255, 253, 130), rgb(255, 155, 113));
-  background-image: no-repeat;
   margin: 0;
   padding: 0;
   width: 100vw;
