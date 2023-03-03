@@ -1,0 +1,118 @@
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(45deg,  rgb(45, 48, 71), rgb(255, 253, 130), rgb(255, 155, 113));
+  background-image: no-repeat;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1{
+  flex: 0.5;
+  margin: 0;
+  margin-top: 5vh;
+  top: 0;
+  max-width: 100%;
+  max-height: 5%;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: xx-large;
+  font-weight: bold;
+  color: rgb(27, 153, 139);
+  text-align: center;
+}
+
+nav{
+  flex: 1;
+  margin: 2%;
+  width: 100vw;
+  max-height: 5vh;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, rgb(27, 153, 139), 10%, rgb(45, 48, 71)35%, 90%, rgb(27,153,139));
+}
+
+nav a{
+  flex: 1;
+  margin: 0;
+  padding: 0.5%;
+  max-width: 100%;
+  max-height: 100%;
+  text-align: center;
+  text-decoration: none;
+  color:white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: larger;
+  font-weight: bold;
+}
+
+nav a:hover{
+  background-color: rgb(232, 72, 85);
+  font-size: 22px;
+}
+
+img{
+  display: flex;
+  position: relative;
+  max-height: 50%;
+}
+
+.container {
+  flex: 1;
+  width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+#astro{
+  flex: 1;
+  background-image: url(../img/astroDude.png);
+  background-repeat: no-repeat;
+  background-position: top left 0;
+  background-size: 100% 100%;
+  width: 30%;
+  height: 30%;
+  max-width: 30%;
+  max-height: 30%;
+  position: absolute;
+  left: 15vw;
+  transition: transform 2s;
+}
+
+#astro:hover{
+  transform: translateX(50vw);
+}
+
+#purp-ball{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: rgb(45,48,71);
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  left:2vw;
+  top:20%;
+  animation: bounce 6s infinite;
+}
+
+@keyframes bounce{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(65vh);
+    background-color: rgb(232, 72, 85);
+    opacity: 50%;
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
