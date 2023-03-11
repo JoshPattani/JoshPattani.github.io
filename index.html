@@ -1,7 +1,80 @@
-<html>
-    <head></head>
-    <body>
-        <p>Hello, World!</p>
-        <p>My name is Josh </p>
-    </body>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/index.css">
+    <title>Josh Pattani</title>
+  </head>
+
+  <body>
+    <!--Header-->
+    <header>
+        <div class="header-container">
+          <div class="row"><!--flex-->
+            <div class="inner-col col"> <!--flex-->
+              <div> <!-- Logo -->
+                <a href="/index.html"><img id="header-img" src="/img/webpage/JP_logo.png" alt="Josh's logo"></a>
+              </div>
+              <!-- main nav bar-->
+              <div id="navigation"> <!--flex-->
+                <nav>
+                    <ul>
+                        <li><a href="#bio">About Me</a></li>
+                        <li><a href="https://www.linkedin.com/in/josh-pattani/" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:9df923b4-a73d-39b6-b9fb-f697bc002980" target="_blank">Resume</a></li>
+                    </ul>
+                </nav>
+              </div>
+              <div> <!-- github link/icon"-->
+                <a href="https://github.com/JoshPattani/JoshPattani.github.io" target="_blank"><img id="git-link" src="/img/webpage/github.png" alt="Github icon"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </header>
+    <!--main content-->
+    <main>
+        <!--Landing Page-->
+        <section class="landing">
+            <div class="landing-container">
+                <!--Landing page image-->
+                <div class="landing-img">
+                    <img id="hazy" src="/img/webpage/monstera-gilles-lambert-unsplash.jpg" alt="Landing page background image">
+                </div>
+                <!--Landing page text-->
+                <div class="landing-text">
+                    <h1>Josh Pattani</h1>
+                    <p id="landing-desc">Maker, Programmer, Web Developer, and Life Explorer</p>
+                </div>
+            </div>
+        </section>
+        <!--Background Image - fixed for scroll effect-->
+        <div class="div-img">
+            <img id="bg-img" src="/img/webpage/silhouetteAI.png" alt="AI generated image portraying the silhouette of man in city alley lit by neon signs">
+        </div>
+        <!-- About Section-->
+        <section id="bio">
+            <div class="container">
+                    <!--About me content-->
+                <h2 id="bio-heading">About Me</h2>
+                <p class="bio-text">Hey there!</p>
+                <p class="bio-text">I'm a carpenter from the City of Brotherly Love, turned welder when I became a Colorado transplant several years ago and now a student at the University of Colorado - Boulder. I've built my fair share of residential and commercial construction projects and traveled the country building rock climbing walls, expanding my skills in welding, masonry, rope access and equipment operation. Now, I'm pursuing a degree in Creative Technology and Design, exploring my passion for creativity, inclusivity, and technology. I love learning and experimenting with new tools and techniques in design, programming, fabrication, and digital content creation. When I'm not busy studying or working on projects, you can find me rock climbing, cultivating culinary mushrooms, or practicing my disc golf skills. I'm excited to see where my journey takes me and to share my experiences with others.</p>
+                <p class="bio-text">Thanks for stopping by!</p>
+            </div>
+        </section>
+        <!--Footer-->
+        <footer>
+            <div>
+                <img id="logo" src="/img/webpage/JP_logoH.png" alt="Josh's logo">
+            </div>
+            <div id="footer-text">
+                <p>Joshua B. Pattani</p>
+                <p>Boulder, CO</p>
+                <p>&copy; 2023<p>
+            </div>
+        </footer>
+    </main>
+  </body>
 </html>

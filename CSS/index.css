@@ -1,0 +1,630 @@
+/* font family import from Adobe */
+@import url("https://use.typekit.net/kde0sgd.css");
+
+html{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* General body style */
+body{
+  font-family: mongoose, yrsa, arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.7;
+  color: #eee;
+  background-color: #272640;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General header styling */
+header{
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  margin: 40px 0;
+  padding: 0;
+  color: #fff;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Generic div styling */
+div{
+  display: block;
+}
+
+/* general anchor styling */
+a{
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* General image styling */
+img{
+  border-style: none;
+  overflow: clip;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* unordered list*/
+ul{
+  display: block;
+  list-style-type: disc;
+  margin-block: 1em;
+  margin-inline: 0;
+  padding: 0;
+}
+
+/* list items */
+li{
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+
+/* Main content container */
+main{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  column-gap: 100px;
+}
+
+/* General section styling */
+section{
+  display: block;
+}
+
+h1{
+  display: block;
+  font-family: mongoose, arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2em;
+  margin-block: 0.67em;
+  margin-inline: 0;
+}
+
+h2{
+  display: block;
+  font-family: mongoose, arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5em;
+  margin-block: 0.83em;
+  margin-inline: 0;
+}
+
+p{
+  display: block;
+  margin-block: 1em;
+  margin-inline: 0;
+}
+
+
+/* HEADER & NAVBAR RULES */
+
+/* Container for header elements */
+.header-container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: all;
+}
+
+/* row flexbox */
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+/* inner header flexbox (nav bar container) */
+.inner-col{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+/* column box */
+.col{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Header logo img */
+#header-img{
+  flex: 1;
+  max-width: 100%;
+  max-height: 45px;
+  vertical-align: middle;
+  border-style: none;
+}
+
+/* Navbar container */
+#navigation{
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation list */  
+nav ul{
+  list-style-type: none;
+  margin-bottom: 0.25em;
+  padding: 0;
+  text-align: -webkit-match-parent;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navigation list items */
+nav li{
+  display: inline-block;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 1em;
+  margin-right: 1em;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: all;
+}
+
+nav li:hover{
+  background-color: transparent;
+  border-left: 0.17em solid;
+  border-right: 0.17em solid;
+  border-color: #A62D9E;
+  border-radius: 5px;
+  padding: 5px;
+  transform: translateY(-25%);
+}
+
+/* Navigation links */
+nav a{
+  flex: 1;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-family: yrsa, arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  box-sizing: content-box;
+}
+
+nav a:hover{
+  background-color: transparent;
+  padding: 0;
+  box-shadow: 0 0.5em 0.4em -0.2em #A62D9E;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: all;
+}
+
+/* Github link icon */
+#git-link{
+  max-height: 30px;
+  max-width: 100%;
+  vertical-align: middle;
+  border-style: none;
+}
+
+#git-link:hover{
+  background-color: transparent;
+  padding: 0;
+  border-radius: 5em;
+  box-shadow: 0 0 0.5em 0.5em #A62D9E;
+}
+
+
+/* LANDING PAGE RULES */
+
+/* Landing page styling - color might change */
+.landing{
+  position: relative;
+  margin-bottom: 30%;
+  background-color: #09080f;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  flex: 1;
+  z-index: 1;
+}
+
+/* Landing page container */
+.landing-container{
+  flex: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(15,14,21,0.5) 0%, #0f0e15 100%);
+  max-height: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+/* Landing page img container */
+.landing-img{
+  flex-shrink: 0.95;
+  flex-grow: 1;
+  min-height: 100%;
+  min-width: 100%;
+  user-select: none;
+  background-color: #09080f;
+}
+
+/* Landing page img */
+#landing-img img{
+  min-height: 100%;
+  min-width: 100%;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Opacity for landing img */
+#hazy{
+  opacity: 0.5;
+}
+
+/* Landing page text container */
+.landing-text{
+  flex: 1;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  max-width: 50%;
+  max-height: 20%;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 45%;
+  left: 52%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title text on landing page */
+.landing-text h1{
+  flex: 1;
+  font-family: mongoose, arial, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 4.5em;
+  line-height: 1;
+  color: #fff;
+  text-decoration: none;
+  vertical-align: middle;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0;
+}
+
+/* subtitle text on landing page */
+#landing-desc{
+  flex: 1;
+  flex-wrap: wrap;
+  font-family: yrsa, arial, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #fff;
+  text-decoration: none;
+  vertical-align: middle;
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding: 0;
+}
+
+/* BACKGROUND IMAGE RULES */
+
+/* Dividing image */
+.div-img{
+  flex: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 100%;
+  height: auto;
+  max-height: 100%;
+  border-style: none;
+  z-index: -1; 
+}
+
+/* bg img */
+#bg-img{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0.7;
+}
+
+
+/* BIO SECTION RULES */
+
+/* About me section  */
+.bio{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  margin-bottom: 0;
+  margin-top: 0;
+  background-color: transparent;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+/* About me container */
+.container{
+  flex: 1;
+  min-width: 80%;
+  margin: 5%;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #232621;
+  opacity: 0.97;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Bio heading */
+#bio-heading{
+  flex: 1;
+  font-family: mongoose, arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  opacity: 1;
+}
+
+/* About me text */
+.bio-text{
+  font-family: yrsa, arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.2em;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  flex: 1;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 1;
+}
+
+
+/* FOOTER RULES */
+
+/* footer styling */
+footer{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-color: transparent;
+  min-height: 100%;
+  min-width: 50%;
+  max-width: 100%;
+}
+
+/* footer logo */
+#logo{
+  flex: 1;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  margin-bottom: 4vh;
+  padding: 0;
+  z-index: 1;
+}
+
+#footer-text{
+  flex: 1;
+  font-family: yrsa, arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.8em;
+  color: #fff;
+  margin: 0;
+  margin-bottom: 2vh;
+  padding: 0;
+  z-index: 1;
+  text-align: center;
+}
+
+
+/* MEDIA QUERIES */
+
+/* MOBILE  (Screens less than 400px wide) */
+@media only screen and (max-width: 400px){
+  header{
+    min-height: 100%;
+    min-width: 100%;
+    margin: 0;
+    margin-top: 2%;
+  }
+  nav{
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-height: 100%;
+    max-width: 60%;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul{
+    margin-top: 0.3em;
+    margin-bottom: 0.35em;
+  }
+  nav li{
+    margin: 0;
+  }
+  nav a{
+    font-size: 0.75em;
+    min-height: 100%;
+    min-width: 100%;
+    letter-spacing: 0.1em;
+  }
+  nav a:hover{
+    transform: none;
+  }
+  nav li:hover{
+    transform: none;
+  }
+  .row{
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .header-container{
+    max-width: 50%;
+    margin: 0;  
+  }
+  #header-img{
+    max-width: 100%;
+    max-height: 35px;
+    margin-top: 0.4em;
+  }
+  #git-link{
+    max-width: 100%;
+    max-height: 25px;
+  }
+  #git-link:hover{
+    box-shadow: 0 0 0.5em 0.25em #A62D9E;
+  }
+  .landing{
+    margin-bottom: 25%;
+  }
+  .landing-img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .landing-text{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 80%;
+    max-height: 10%;
+    top: 40vh;
+  }
+  .landing-text h1{
+    font-size: 4em;
+    margin-top: 2%;
+  }
+  #landing-desc{
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+  #bio{
+    margin-top: 40%;
+  }
+  .container{
+    max-width: 100%;
+    margin: 0;
+    margin-top: 40%;
+    margin-bottom: 20%;
+    padding: 5px;
+  }
+  #bio-heading{
+    font-size: 1.5em;
+    margin-top: 5%;
+  }
+  .bio-text{
+    font-size: 1em;
+  }
+}
+
+/* DESKTOP (Screens 1000px wide and greater) */
+@media only screen and (min-width: 999px){
+  .header-container{
+    max-width: 100%;
+    margin: 0;
+  }
+  #header-img{
+    max-height: 64px;
+  }
+  #navigation{
+    max-width: 100%;
+    margin-right: 8.5%;
+  }
+  #git-link{
+    max-height: 50px;
+    margin-top: 10%;
+  }
+  .landing{
+    margin-bottom: 25%;
+  }
+  .landing-img{
+    flex-shrink: 1;
+    max-height: 100%;
+  }
+  .landing-text{
+    flex-shrink: 1;
+    max-height: 100%;
+    top: 40%;
+    left: 50%;
+  }
+  .landing-text h1{
+    font-size: 7em;
+  }
+  #landing-desc{
+    font-size: 1.2em;
+  }
+}
