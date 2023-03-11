@@ -5,7 +5,7 @@
 
 ## **Projects** ##
 * HTML - [HTML](https://joshpattani.github.io/html-midterm/page5.html)
-* CSS
+* CSS - [CSS](https://joshpattani.github.io/)
 * JS
 
 ## **In-class Assignments** ##
