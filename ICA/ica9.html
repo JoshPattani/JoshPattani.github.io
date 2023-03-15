@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #button{
+      border: 5px solid darkslateblue;
+      border-radius: 70px;
+      background-color: magenta;
+      padding: 10px;
+      width: 250px;
+      height: 100px;
+      text-align: center;
+      font-size: 50px;
+    }
+
+    p{
+      font-size: 50px;
+    }
+
+    h1{
+      font-size: 80px;
+    }
+
+    button{
+      border: 10px solid #404B69;
+      font-size: 5rem;
+      font-family: 'Arvo', cursive;
+      line-height: 2;
+      font-weight: 900;
+      color: white;
+      text-shadow: 3px 0 black;
+      border-radius: 15px;
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      text-align: center;
+      margin: 10px;
+      background-color: darkmagenta;
+      text-align: center;
+      line-height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="button">
+    <p>Click Me!</p>
+  </div>
+  <br>
+  <div class="form">
+    <label for="guessField"> Enter a guess:</label>
+    <input type="number" max="100" min="1" id="guessField" class="guessField">
+    <input type="submit" value="Submit guess" class="guessSubmit">
+  </div>
+
+  <script>
+
+    let btn = document.querySelector("#button");
+
+    function changeBtn(){
+    
+      btn.textContent = "CLICKED";
+      btn.style.backgroundColor = "darkslateblue";
+      btn.style.color = "white";
+      btn.style.border = '2px solid magenta'
+      alert('You clicked me!')
+    };
+
+    btn.addEventListener('click', changeBtn);
+
+    function checkGuess() {
+
+      let value = userGuess.value*2;
+      alert(value);
+    }
+
+    let guessBtn = document.querySelector(".guessSubmit");
+    let userGuess = document.querySelector(".guessField")
+    // console.log(guessBtn);
+    guessBtn.addEventListener('click', checkGuess);
+
+  </script>
+</body>
+</html>
