@@ -33,8 +33,7 @@
 * WA5 - [Image Overlay](https://joshpattani.github.io/WA/wa5.html)
 * WA6 - [CSS Layout](https://joshpattani.github.io/WA/wa6/index.html)
 * WA7 - [CSS Animation](https://joshpattani.github.io/WA/wa7.html)
-* WA8
-* WA9
+* WA9 - [A Silly Story](https://joshpattani.github.io/WA/wa9.html)
 * WA10
 * WA11
 * WA12
