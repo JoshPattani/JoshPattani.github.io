@@ -19,7 +19,7 @@
 * ICA6 - [CSS Layouts](https://joshpattani.github.io/ICA/ica6/ica6-part1.html)
 * ICA7 - [CSS Animations](https://joshPattani.github.io/ICA/ica7.html)
 * ICA9 - [Interactive Elements](https://joshPattani.github.io/ICA/ica9.html)
-* ICA10
+* ICA10 - [CYOF](https://joshPattani.github.io/ICA/ica10/ica10.html)
 * ICA11
 * ICA12
 * ICA14
