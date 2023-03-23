@@ -34,7 +34,7 @@
 * WA6 - [CSS Layout](https://joshpattani.github.io/WA/wa6/index.html)
 * WA7 - [CSS Animation](https://joshpattani.github.io/WA/wa7.html)
 * WA9 - [A Silly Story](https://joshpattani.github.io/WA/wa9.html)
-* WA10
+* WA10 - [Image Carousel](https://joshpattani.github.io/WA/wa10/gellery-start/assignment9.html)
 * WA11
 * WA12
 * WA13
