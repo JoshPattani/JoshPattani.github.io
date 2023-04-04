@@ -20,7 +20,7 @@
 * ICA7 - [CSS Animations](https://joshPattani.github.io/ICA/ica7.html)
 * ICA9 - [Interactive Elements](https://joshPattani.github.io/ICA/ica9.html)
 * ICA10 - [CYOF](https://joshPattani.github.io/ICA/ica10/ica10.html)
-* ICA11
+* ICA11 - [Trivia Machine](https://joshPattani.github.io/ICA/ica10/ica11.html)
 * ICA12
 * ICA14
 * ICA15
