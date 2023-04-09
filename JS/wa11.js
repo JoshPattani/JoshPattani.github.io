@@ -13,7 +13,7 @@ button2.addEventListener('click', showEpisode);
 // "http://sunnyquotes.net/q.php?random";
 
 
-const url = "https://proxy.cors.sh/https://sunnyquotes.net/q.php?random";
+const url = "https://proxy.cors.sh/http://sunnyquotes.net/q.php?random";
 
 const images = {
   'Dee Reynolds': "../assets/img/Dee.jpg",
@@ -34,7 +34,7 @@ async function sunnyFetch() {
   try{
     const response = await fetch(url, {
       headers: {
-      'x-cors-api-key': 'temp_3b27dfd8c62b2430d44c205638e11c11'
+      'x-cors-api-key': 'live_8fffd7d83bad52b63301d508a8bdafb546524d307ebe5d4e08fd72b462a88e05'
       }
     })
     if (!response.ok) {
