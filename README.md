@@ -21,7 +21,9 @@
 * ICA9 - [Interactive Elements](https://joshPattani.github.io/ICA/ica9.html)
 * ICA10 - [CYOF](https://joshPattani.github.io/ICA/ica10/ica10.html)
 * ICA11 - [Trivia Machine](https://joshPattani.github.io/ICA/ica11.html)
-* ICA12
+* ICA12 - Quiz 10 and ICA12
+  * [(a) Kittens and Mothers](https://JoshPattani.github.io/ICA/quiz10.html)
+  * [(b) ICA12]()
 * ICA14
 * ICA15
 
