@@ -23,7 +23,7 @@
 * ICA11 - [Trivia Machine](https://joshPattani.github.io/ICA/ica11.html)
 * ICA12 - Quiz 10 and ICA12
   * [(a) Kittens and Mothers](https://JoshPattani.github.io/ICA/quiz10.html)
-  * [(b) ICA12]()
+  * [(b) Balls!](https://joshpattani.github.io/ICA/ica12/ica12.html)
 * ICA14
 * ICA15
 
