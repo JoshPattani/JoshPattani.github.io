@@ -23,7 +23,7 @@
 * ICA11 - [Trivia Machine](https://joshPattani.github.io/ICA/ica11.html)
 * ICA12 - Quiz 10 and ICA12
   * [(a) Kittens and Mothers](https://JoshPattani.github.io/ICA/quiz10.html)
-  * [(b) Balls!](https://joshpattani.github.io/ICA/ica12/ica12.html)
+  * [(b) Balls!](https://JoshPattani.github.io/ICA/ica12/ica12.html)
 * ICA14
 * ICA15
 
@@ -38,7 +38,7 @@
 * WA9 - [A Silly Story](https://joshpattani.github.io/WA/wa9.html)
 * WA10 - [Image Carousel](https://joshpattani.github.io/WA/wa10/gallery-start/assignment9.html)
 * WA11 - [Electric Boogaloo - IASIP Quote Generator](https://joshpattani.github.io/WA/wa11.html)
-* WA12
+* WA12 - [Human Resources](https://joshpattani.github.io/WA/wa12.html)
 * WA13
 * WA14
 * WA15
