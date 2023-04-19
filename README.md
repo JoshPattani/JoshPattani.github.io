@@ -24,7 +24,7 @@
 * ICA12 - Quiz 10 and ICA12
   * [(a) Kittens and Mothers](https://JoshPattani.github.io/ICA/quiz10.html)
   * [(b) Balls!](https://JoshPattani.github.io/ICA/ica12/ica12.html)
-* ICA14
+* ICA13 - [WA13 Prep](https://joshpattani.github.io/WA/wa13.html)
 * ICA15
 
 ## **Weekly Assignments** ##
