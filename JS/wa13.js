@@ -5,7 +5,7 @@ function check() {
 }
 
 function submit() {
-  alert(output.textContent);
+  alert('Your volume is now: ' + output.textContent);
 }
 
 function reset() {
@@ -70,5 +70,5 @@ var sliderOutput = document.querySelector(".slider-output");
 
 // Update the current slider value (each time you drag the slider handle)
 function update() {
-sliderOutput.textContent = slider.value;
+  sliderOutput.textContent = slider.value;
 }
