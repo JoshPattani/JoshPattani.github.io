@@ -1,39 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Poorly Designed Volume Knob</title>
 
-	<link rel="stylesheet" href="../CSS/wa13.css">
-	<script defer src="../JS/wa13.js"></script>
-</head>
-<body>
-	<div>
-		<p>Please select the volume you'd like.<p>
-		<p class="output">44</p>
-	</div>
-	<div> <!-- '+ / -' volume changer -->
-	  <form>    
-		<input class="minus-button" type="button" name="minus-button" value="MINUS">
+		<link rel="stylesheet" href="../CSS/wa13.css">
+		<script defer src="../JS/wa13.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<p>Due to a recent excess in unused decibel output, volume levels will no longer not sustained. Please rotate the control knob to select the volume you'd like.
+			</p>
+			
+			<div class="volume-module">
+				<img class="vol_icon" src="../assets/img/volume.png" alt="volume icon">
+				<div class="slidecontainer">
+					<input type="range" min="0" max="100" class="slider" id="myRange">
+				</div>
 
-		<input class="plus-button" type="button" name="plus-button" value="PLUS">
+				<div class="knob-container" id="knob-container-js">
+					<div class="knob-output" id="knob-output-js"></div>
+					<div class="box">
+						<div class="knob" >
+							<div class="knob-dot" id="knob-js"></div>
+						</div>
+					</div>
 
-		<input class="reset-button" type="button" name="reset-button" value="reset">
-
-		<input class="random-button" type="button" name="random-button" value="RANDOM">
-
-		<input class="submit-button" type="button" name="submit-button" value="SUBMIT">
-	  </form>
-	</div>
-	<div><!-- Volume slider -->
-		<div class="slidecontainer">
-			<p>Please select the volume you'd like.<p>
-			<p class="slider-output"></p>
-			<input type="range" min="0" max="100" class="slider" id="myRange">
-			<input class="slider-submit-button" type="button" name="slider-submit-button" value="SUBMIT">
+					<div  id="tickContainer-js" ></div>
+					<div class="minMax"	>
+						<div class="min">MIN</div>
+						<div class="max">MAX</div>
+					</div>				
+				</div>
+			</div>
+			<p>NOTE: The knob was going to be a rotary wheel to wind up a volume sustain meter in the original concept, but I could not figure out how to count the rotations without reset the volume to zero.
+			</p>
 		</div>
-	</div>
-</body>
+
+		<!-- ica13
+		<div>
+			<p>Please select the volume you'd like.<p>
+			<p class="output">44</p>
+		</div>
+		<div>  '+/ -' volume changer 
+			<form>    
+			<input class="minus-button" type="button" name="minus-button" value="MINUS">
+
+			<input class="plus-button" type="button" name="plus-button" value="PLUS">
+
+			<input class="reset-button" type="button" name="reset-button" value="reset">
+
+			<input class="random-button" type="button" name="random-button" value="RANDOM">
+
+			<input class="submit-button" type="button" name="submit-button" value="SUBMIT">
+			</form>
+		</div>
+		<div> Volume slider 
+			<div class="slidecontainer">
+				<p>Please select the volume you'd like.<p>
+				<p class="slider-output"></p>
+				<input type="range" min="0" max="100" class="slider" id="myRange">
+				<input class="slider-submit-button" type="button" name="slider-submit-button" value="SUBMIT">
+			</div>
+		</div> -->
+	</body>
 </html>
