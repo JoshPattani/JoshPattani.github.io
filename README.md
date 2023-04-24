@@ -39,6 +39,6 @@
 * WA10 - [Image Carousel](joshpattani.github.io/WA/wa10/gallery-start/assignment9.html)
 * WA11 - [Electric Boogaloo - IASIP Quote Generator](joshpattani.github.io/WA/wa11.html)
 * WA12 - [Human Resources](joshpattani.github.io/WA/wa12.html)
-* WA13 - [Bad Volume Control](jpattani.me/WA/wa13.html)
+* WA13 - [Bad Volume Control](https://www.jpattani.me/WA/wa13.html)
 * WA14
 * WA15
