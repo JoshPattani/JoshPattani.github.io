@@ -40,5 +40,5 @@
 * WA11 - [Electric Boogaloo - IASIP Quote Generator](https://www.jpattani.me/WA/wa11.html)
 * WA12 - [Human Resources](https://www.jpattani.me/WA/wa12.html)
 * WA13 - [Bad Volume Control](https://www.jpattani.me/WA/wa13.html)
-* WA14 - [Map of Shark Attacks in Australia](https://www.jpattani.me/WA/wa14.html)
+* WA14 - [Australia's Shark Attack Datamap](https://www.jpattani.me/WA/wa14.html)
 * WA15
