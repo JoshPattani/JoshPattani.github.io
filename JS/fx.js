@@ -10,12 +10,6 @@ class Fx {
   }
 
   fillCanvas(color) {
-    // if (this.cnv) {
-    //   console.log("fill Here");
-    //   this.cnv.width = window.innerWidth;
-    //   this.cnv.height = window.innerHeight;
-    //   this.drawRect(0, 0, this.cnv.width, this.cnv.height, color);
-    // }
     this.drawRect(0, 0, this.cnv.width, this.cnv.height, color);
   }
 

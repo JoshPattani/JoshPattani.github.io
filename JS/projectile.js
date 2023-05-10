@@ -79,9 +79,5 @@ class Projectile {
     this.angle = this.owner.angle;
     this.x = this.owner.x + this.owner.img.width / 2;
     this.y = this.owner.y + this.owner.img.height / 2;
-    // this.thrust = {
-    //   x: Math.cos(this.angle) * this.speed,
-    //   y: Math.sin(this.angle) * this.speed,
-    // };
   }
 }

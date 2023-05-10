@@ -108,16 +108,4 @@ class Gui {
     this.showScreen("screen-end");
     this.gameLoop.stop();
   }
-
-  // draw() {
-  //   this.ctx.fillStyle = "#000000";
-  //   this.ctx.fillRect(0, 0, this.cnv.width, this.cnv.height);
-  //   this.ctx.fillStyle = "#FFFFFF";
-  //   this.ctx.font = "20px Arial";
-  //   this.ctx.fillText("Loading...", 10, 30);
-  // }
-
-  // launch() {
-  //   this.launchIfReady();
-  // }
 }

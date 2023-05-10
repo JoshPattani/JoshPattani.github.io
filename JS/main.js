@@ -3,8 +3,7 @@ window.gui = new Gui(game);
 
 window.onload = function () {
   // console.log("loading...");
-  // gui.prepare();
-  // gui.loadResources();
+
   stopTimer();
   window.gui.beginLoad([
     {
@@ -103,16 +102,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
   }
 });
 
-// function displayNextImage() {
-//   x = x === images.length - 1 ? 0 : x + 1;
-//   document.getElementById("img").src = images[x];
-// }
-
-// function displayPreviousImage() {
-//   x = x <= 0 ? images.length - 1 : x - 1;
-//   document.getElementById("img").src = images[x];
-// }
-
 // Change start screen image periodically
 var loop;
 function startTimer() {
@@ -144,14 +133,3 @@ function change() {
     idx = 0;
   }
 }
-
-// window.onkeydown = function (e) {
-//   console.log("keydown...");
-//   if (e.keyCode == 32) {
-//     game.player.shoot();
-//   }
-// };
-
-window.onkeyup = function (e) {
-  console.log("keyup...");
-};

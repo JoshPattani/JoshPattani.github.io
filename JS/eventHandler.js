@@ -1,16 +1,16 @@
 class EventHandler {
+  // keyboard event handler class
+
   constructor() {
     this.keys = [];
   }
 
   init() {
     document.addEventListener("keydown", (e) => {
-      // this.keys[e.keyCode] = true;
       this.KeyDown(e);
     });
 
     document.addEventListener("keyup", (e) => {
-      // this.keys[e.keyCode] = false;
       this.KeyUp(e);
     });
   }
@@ -28,7 +28,6 @@ class EventHandler {
   KeyDown(e) {
     if (
       (e.key == "ArrowUp" ||
-        // e.key == "ArrowDown" ||
         e.key == "ArrowLeft" ||
         e.key == "ArrowRight" ||
         e.key == " ") &&
@@ -42,7 +41,6 @@ class EventHandler {
   KeyUp(e) {
     if (
       e.key == "ArrowUp" ||
-      // e.key == "ArrowDown" ||
       e.key == "ArrowLeft" ||
       e.key == "ArrowRight" ||
       e.key == " "

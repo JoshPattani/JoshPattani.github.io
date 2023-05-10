@@ -1,4 +1,6 @@
 class AsteroidDeployer {
+  // Asteroid deployment manager
+
   constructor(player, particles) {
     this.collection = [];
     this.player = player;
@@ -47,6 +49,8 @@ class AsteroidDeployer {
 }
 
 class ItemDeployer {
+  // Item deployment manager
+
   constructor(player) {
     this.collection = [];
 
@@ -85,6 +89,7 @@ class ItemDeployer {
   }
 }
 
+// Asteroid object
 class Asteroid {
   constructor(size) {
     this.size = size;
@@ -114,6 +119,7 @@ class Asteroid {
     this.active = true;
   }
 
+  // choose asteroid size
   setImg() {
     switch (this.size) {
       case 1:
@@ -128,6 +134,7 @@ class Asteroid {
     }
   }
 
+  // position update
   update() {
     if (this.active) {
       this.x += this.speed * Math.cos(this.angle);
@@ -156,6 +163,8 @@ class Asteroid {
       this.fx.rotateAndDraw(this.img, this.x, this.y, this.rotation);
     }
   }
+
+  // collision detection
 
   hasCollided(obj) {
     if (this.active) {
@@ -237,7 +246,7 @@ class Asteroid {
   //   this.collection.push(a2);
   // }
 
-  // explosion and asteroid split
+  // explosion sound
   collision() {
     this.active = false;
     this.explosion.pause();
@@ -246,7 +255,7 @@ class Asteroid {
   }
 }
 
-// Power up item class
+// Power up item object
 
 class Item {
   constructor(owner) {

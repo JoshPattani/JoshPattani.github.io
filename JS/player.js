@@ -1,4 +1,6 @@
 class Player {
+  // Player control class
+
   constructor(particles) {
     this.fx = new Fx();
     this.eventHandler = new EventHandler();
@@ -37,11 +39,15 @@ class Player {
     this.score = 0;
     this.shots = 0;
     this.hits = 0;
+
+    this.lives = 3;
+    this.livesMax = 3;
+
+    // shield attr
+
     // this.shield = 100;
     // this.shieldMax = 100;
     // this.shieldRecharge = 0;
-    this.lives = 3;
-    this.livesMax = 3;
   }
 
   init() {
@@ -80,9 +86,6 @@ class Player {
         if (this.lives < 0) {
           this.lives = 0;
         }
-        // this.shield = this.shieldMax;
-        // this.shieldRecharge = 0;
-        // this.dyingTime = 240;
       }
       return;
     }
@@ -128,9 +131,6 @@ class Player {
         this.pewPew.currentTime = 0;
         this.pewPew.play();
         this.projectileDeployer.fire();
-        // this.reload = 10;
-        // this.shots++;
-        // this.bullets.spawn(1, this);
       }
     }
 
@@ -143,7 +143,8 @@ class Player {
     this.projectileDeployer.update();
   }
 
-  // Shield recharge - function not added
+  // Shield function & recharge - function not added
+
   // this.frames %= 60;
   // this.reload--;
   // if (this.reload < 0) {
