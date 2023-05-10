@@ -167,15 +167,15 @@ class Asteroid {
   // collision detection
 
   hasCollided(obj) {
-    if (this.active) {
-      let dx = this.x - obj.x;
-      let dy = this.y - obj.y;
-      let dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < this.img.width / 2 + obj.width / 2) {
-        return true;
-      }
+    if (this.active && obj.active) {
+      let bLeft = obj.x + obj.size < this.x;
+      let bRight = obj.x > this.x + this.img.width;
+      let bTop = obj.y + obj.size < this.y;
+      let bBottom = obj.y > this.y + this.img.height;
+      return !(bLeft || bRight || bTop || bBottom);
+    } else {
+      return false;
     }
-    return false;
   }
 
   checkForCollisionWithPlayer(player) {
@@ -195,25 +195,27 @@ class Asteroid {
 
   // bullet & asteroid collision - random chance of dropping powerup item
   checkForCollisionWithBullet(bullet, particles, service) {
-    bullet.forEach((b) => {
-      if (this.hasCollided(b)) {
-        let drop = Math.random() * 10;
-        if (drop > 8) {
-          service.items.push(this.dropItem());
-        }
-        this.collision();
+    if (this.active) {
+      bullet.forEach((b) => {
+        if (this.hasCollided(b)) {
+          let drop = Math.random() * 10;
+          if (drop > 8) {
+            service.items.push(this.dropItem());
+          }
+          this.collision();
 
-        let nxtSize = ++this.size;
-        let tot = Math.random() * 4;
-        if (nxtSize < 4) {
-          service.spawn(nxtSize, tot, this);
+          let nxtSize = ++this.size;
+          let tot = Math.random() * 4;
+          if (nxtSize < 4) {
+            service.spawn(nxtSize, tot, this);
+          }
+          b.active = false;
+          // particles.emit(bullet.x, bullet.y, 10);
+          particles.spawn(16, this);
+          return;
         }
-        b.active = false;
-        particles.emit(bullet.x, bullet.y, 10);
-        return true;
-      }
-    });
-    return false;
+      });
+    }
   }
 
   // power up item drop

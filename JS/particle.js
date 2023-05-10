@@ -42,13 +42,9 @@ class Particle {
     this.img = new Image();
     this.x = 0;
     this.y = 0;
-    this.size = 0;
+    this.size = 3;
     this.angle = 0;
     this.speed = 0;
-    this.thrust = {
-      x: 0,
-      y: 0,
-    };
     this.active = false;
     this.life = 0;
     this.lifeMax = 0;
@@ -62,8 +58,8 @@ class Particle {
 
   update() {
     if (this.active) {
-      this.x += this.thrust.x;
-      this.y += this.thrust.y;
+      this.x += Math.cos(this.angle) * this.speed;
+      this.y += Math.sin(this.angle) * this.speed;
       this.life--;
       if (this.life <= 0) {
         this.active = false;
