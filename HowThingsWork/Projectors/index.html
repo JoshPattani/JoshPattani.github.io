@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- /Required for mobile devices -->
+    <title>How Projectors Work - An Interactive Slideshow Presentation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="slides">
+      <div id="slide_1" class="active slide">
+        <header>
+          <h1>Welcome to the Illuminating World of Projectors!</h1>
+          <p>
+            Navigate through the interactive exploration using the buttons or
+            arrow keys, and select any topic that sparks your curiosity.
+          </p>
+        </header>
+      </div>
+
+      <div id="slide_2" class="slide" data-media="ZwJDZku0qMw" data-start="50">
+        <header>
+          <h1>The Historical Progression of Projectors</h1>
+          <p>
+            From magic lanterns to digital wonders, trace the captivating
+            evolution that has shaped the way we see content.
+          </p>
+        </header>
+      </div>
+      <div
+        id="slide_3"
+        class="slide"
+        data-media="HfZmStDoY2I"
+        data-start="49"
+        data-end="407"
+      >
+        <header>
+          <h1>Comparative Analysis of Projector Types</h1>
+          <p>
+            Investigate the distinctions, advantages, and limitations of LED,
+            Lamp, and Laser projectors.
+          </p>
+        </header>
+      </div>
+      <div id="slide_4" class="slide" data-media="2evuMLBUiCo" data-start="4">
+        <header>
+          <h1>Understanding LCD and DLP Projector Technologies</h1>
+          <p>
+            Delve into the operational principles and unique attributes of LCD
+            and DLP projectors.
+          </p>
+        </header>
+      </div>
+      <div id="slide_5" class="slide" data-media="kbKj-1Zlt_M">
+        <header>
+          <h1>Key Components of LCD Projectors</h1>
+          <p>
+            Explore the essential elements that constitute LCD projectors and
+            their functional integration.
+          </p>
+        </header>
+      </div>
+      <div id="slide_6" class="slide" data-media="9nb8mM3uEIc" data-start="144">
+        <header>
+          <h1>The Architecture of DLP Projectors</h1>
+          <p>
+            Uncover the internal configuration of DLP projectors and the
+            mechanisms behind their image projection.
+          </p>
+        </header>
+      </div>
+      <div
+        id="slide_7"
+        class="slide"
+        data-media="U-HXgM9wdpY"
+        data-start="294"
+        data-end="500"
+      >
+        <header>
+          <h1>Operational Insights into DLP Projection</h1>
+          <p>
+            Gain an in-depth understanding of how DLP technology facilitates the
+            projection process.
+          </p>
+        </header>
+      </div>
+      <div
+        id="slide_8"
+        class="slide"
+        data-media="U-HXgM9wdpY"
+        data-start="504"
+        data-end="631"
+      >
+        <header>
+          <h1>Mechanics of LCD Projectors</h1>
+          <p>
+            Learn about the technological underpinnings and innovative features
+            that define LCD projectors.
+          </p>
+        </header>
+      </div>
+      <div id="slide_9" class="slide">
+        <header>
+          <h1>Thanks for Visiting!</h1>
+        </header>
+      </div>
+    </div>
+    <div id="buttons">
+      <!-- Example Button for a Topic -->
+      <!-- <button class="topic-button" id="how-light-works">How Light Works</button> -->
+      <button id="previousButton" class="button">Previous</button>
+      <button id="nextButton" class="button">Next</button>
+      <!-- Add more buttons for each topic here -->
+    </div>
+    <div id="toggleContainer" style="display: none">
+      <button id="mediaToggle" class="button"></button>
+      <p>Explore Topic</p>
+    </div>
+    <div id="mediaContainer" style="display: none">
+      <div class="videoWrapper">
+        <!-- Media content will be dynamically inserted here -->
+      </div>
+    </div>
+    <!-- partial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/prism.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
