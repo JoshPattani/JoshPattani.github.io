@@ -49,6 +49,17 @@ a {
   z-index: 1;
 }
 
+#slide_1 header h2 {
+  font-size: 0.5em;
+  letter-spacing: 0.1em;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: #383d3b;
+}
+
 .slides .slide header p {
   width: 50%;
   text-align: justify;
@@ -57,7 +68,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  font-size: 0.75em;
+  font-size: 0.5em;
   color: #fff;
   text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
@@ -86,7 +97,7 @@ a {
     linear,
     left top,
     right top,
-    from(#fdf5e6),
+    from(#e8dbc5),
     color-stop(50%, #c492b1),
     to(#993333)
   );
