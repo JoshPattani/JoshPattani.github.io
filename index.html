@@ -1,135 +1,1035 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/CSS/index.css" />
-    <title>Josh Pattani</title>
-  </head>
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+   name="description"
+   content="Josh Pattani - Designer, Developer, Maker & Engineer. Rock climbing wall designer and creative technologist based in Boulder, CO."
+  />
+  <meta
+   name="keywords"
+   content="designer, developer, maker, engineer, rock climbing walls, creative technology, portfolio"
+  />
+  <meta name="author" content="Josh Pattani" />
 
-  <body>
-    <!--Header-->
-    <header>
-      <div class="header-container">
-        <div class="row">
-          <!--flex-->
-          <div class="inner-col col">
-            <!--flex-->
-            <div>
-              <!-- Logo -->
-              <a href="/index.html"
-                ><img
-                  id="header-img"
-                  src="/img/webpage/JP_logo.png"
-                  alt="Josh's logo"
-              /></a>
-            </div>
-            <!-- main nav bar-->
-            <div id="navigation">
-              <!--flex-->
-              <nav>
-                <ul>
-                  <li><a href="#bio">About Me</a></li>
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/josh-pattani/"
-                      target="_blank"
-                      >LinkedIn</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:1a2d2f12-65cf-49a0-95a2-b8760216104d"
-                      target="_blank"
-                      >Resume</a
-                    >
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div>
-              <!-- github link/icon"-->
-              <a
-                href="https://github.com/JoshPattani/JoshPattani.github.io"
-                target="_blank"
-                ><img
-                  id="git-link"
-                  src="/img/webpage/github.png"
-                  alt="Github icon"
-              /></a>
-            </div>
-          </div>
-        </div>
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Josh Pattani | Designer & Maker" />
+  <meta
+   property="og:description"
+   content="Designer, Developer, Maker & Engineer crafting experiences that inspire."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://joshpattani.github.io" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+   rel="stylesheet"
+  />
+
+  <!-- Matter.js Physics Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
+  <link rel="stylesheet" href="/CSS/index.css" />
+  <title>Josh Pattani | Designer & Maker</title>
+ </head>
+
+ <body>
+  <!-- Cursor follower for desktop -->
+  <div class="cursor-follower"></div>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+   <nav class="nav container">
+    <a href="#home" class="nav__logo">
+     <img
+      src="/img/webpage/JP_logo.png"
+      alt="Josh Pattani Logo"
+      class="nav__logo-img"
+     />
+    </a>
+
+    <div class="nav__menu" id="nav-menu">
+     <ul class="nav__list">
+      <li class="nav__item">
+       <a href="#home" class="nav__link active">Home</a>
+      </li>
+      <li class="nav__item">
+       <a href="#about" class="nav__link">About</a>
+      </li>
+      <li class="nav__item">
+       <a href="#skills" class="nav__link">Skills</a>
+      </li>
+      <li class="nav__item">
+       <a href="#portfolio" class="nav__link">Portfolio</a>
+      </li>
+      <li class="nav__item">
+       <a href="#experience" class="nav__link">Experience</a>
+      </li>
+      <li class="nav__item">
+       <a href="#contact" class="nav__link">Contact</a>
+      </li>
+     </ul>
+
+     <!-- Close button for mobile -->
+     <div class="nav__close" id="nav-close">
+      <span>&times;</span>
+     </div>
+    </div>
+
+    <!-- Social links in nav -->
+    <div class="nav__social">
+     <a
+      href="https://github.com/JoshPattani"
+      target="_blank"
+      rel="noopener"
+      class="nav__social-link"
+      aria-label="GitHub"
+     >
+      <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="currentColor"
+      >
+       <path
+        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+       />
+      </svg>
+     </a>
+     <a
+      href="https://www.linkedin.com/in/josh-pattani/"
+      target="_blank"
+      rel="noopener"
+      class="nav__social-link"
+      aria-label="LinkedIn"
+     >
+      <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="currentColor"
+      >
+       <path
+        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+       />
+      </svg>
+     </a>
+    </div>
+
+    <!-- Mobile toggle -->
+    <div class="nav__toggle" id="nav-toggle">
+     <span></span>
+     <span></span>
+     <span></span>
+    </div>
+   </nav>
+  </header>
+
+  <main class="main">
+   <!-- ===== HERO SECTION ===== -->
+   <section class="hero section" id="home">
+    <div class="hero__container container">
+     <div class="hero__content">
+      <div class="hero__data">
+       <span class="hero__subtitle">Hello, I'm</span>
+       <h1 class="hero__title">Josh Pattani</h1>
+       <div class="hero__roles">
+        <span class="hero__role" data-text="Designer">Designer</span>
+        <span class="hero__role-separator">•</span>
+        <span class="hero__role" data-text="Developer">Developer</span>
+        <span class="hero__role-separator">•</span>
+        <span class="hero__role" data-text="Maker">Maker</span>
+        <span class="hero__role-separator">•</span>
+        <span class="hero__role" data-text="Engineer">Engineer</span>
+       </div>
+       <!-- <p class="hero__description">
+                Crafting experiences that inspire movement, creativity, and connection. 
+                From rock climbing walls to digital interfaces, I design and build 
+                things that bring people together.
+              </p> -->
+       <p class="hero__description">
+        an <b>multidisciplinary designer</b> and
+        <b><i>creative powerhouse</i></b> who blends curiosity and creative
+        insight.
+       </p>
+       <div class="hero__buttons">
+        <a href="#portfolio" class="btn btn--primary">
+         <span>View My Work</span>
+         <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+         >
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+         </svg>
+        </a>
+        <a href="#contact" class="btn btn--outline">
+         <span>Get In Touch</span>
+        </a>
+       </div>
       </div>
-    </header>
-    <!--main content-->
-    <main>
-      <!--Landing Page-->
-      <section class="landing">
-        <div class="landing-container">
-          <!--Landing page image-->
-          <div class="landing-img">
-            <img
-              id="hazy"
-              src="/img/webpage/monstera-gilles-lambert-unsplash.jpg"
-              alt="Landing page background image"
-            />
-          </div>
-          <!--Landing page text-->
-          <div class="landing-text">
-            <h1>Josh Pattani</h1>
-            <p id="landing-desc">
-              Maker, Programmer, Web Developer, and Life Explorer
-            </p>
-          </div>
-        </div>
-      </section>
-      <!--Background Image - fixed for scroll effect-->
-      <div class="div-img">
+
+      <div class="hero__image">
+       <div class="hero__image-wrapper">
+        <div class="hero__image-bg"></div>
+        <!-- Add your professional photo here -->
         <img
-          id="bg-img"
-          src="/img/webpage/silhouetteAI.png"
-          alt="AI generated image portraying the silhouette of man in city alley lit by neon signs"
+         src="/img/webpage/silhouetteAI.png"
+         alt="Josh Pattani"
+         class="hero__img"
         />
+       </div>
+       <!-- Floating elements for visual interest -->
+       <div class="hero__shapes">
+        <span class="hero__shape hero__shape--1"></span>
+        <span class="hero__shape hero__shape--2"></span>
+        <span class="hero__shape hero__shape--3"></span>
+       </div>
       </div>
-      <!-- About Section-->
-      <section id="bio">
-        <div class="container">
-          <!--About me content-->
-          <h2 id="bio-heading">About Me</h2>
-          <p class="bio-text">Hey there!</p>
-          <p class="bio-text">
-            I'm a carpenter from the City of Brotherly Love, turned welder when
-            I became a Colorado transplant several years ago and now a student
-            at the University of Colorado - Boulder. I've built my fair share of
-            residential and commercial construction projects and traveled the
-            country building rock climbing walls, expanding my skills in
-            welding, masonry, rope access and equipment operation. Now, I'm
-            pursuing a degree in Creative Technology and Design, exploring my
-            passion for creativity, inclusivity, and technology. I love learning
-            and experimenting with new tools and techniques in design,
-            programming, fabrication, and digital content creation. When I'm not
-            busy studying or working on projects, you can find me rock climbing,
-            cultivating culinary mushrooms, or practicing my disc golf skills.
-            I'm excited to see where my journey takes me and to share my
-            experiences with others.
+     </div>
+
+     <!-- Scroll indicator -->
+     <div class="hero__scroll">
+      <a href="#about" class="hero__scroll-link">
+       <span class="hero__scroll-text">Scroll</span>
+       <div class="hero__scroll-icon">
+        <span></span>
+       </div>
+      </a>
+     </div>
+    </div>
+
+    <!-- Background decoration -->
+    <div class="hero__bg-pattern"></div>
+   </section>
+
+   <!-- ===== ABOUT SECTION ===== -->
+   <section class="about section" id="about">
+    <div class="about__container container">
+     <div class="section__header">
+      <span class="section__subtitle">Get To Know Me</span>
+      <h2 class="section__title">About Me</h2>
+     </div>
+
+     <div class="about__content">
+      <div class="about__image">
+       <div class="about__image-wrapper">
+        <img
+         src="/img/webpage/monstera-gilles-lambert-unsplash.jpg"
+         alt="About Josh"
+         class="about__img"
+        />
+        <div class="about__image-overlay"></div>
+       </div>
+       <!-- Stats cards -->
+       <div class="about__stats">
+        <div class="about__stat">
+         <span class="about__stat-number">7+</span>
+         <span class="about__stat-label">Months in Design Career</span>
+        </div>
+        <div class="about__stat">
+         <span class="about__stat-number">CU</span>
+         <span class="about__stat-label">Boulder Graduate</span>
+        </div>
+       </div>
+      </div>
+
+      <div class="about__data">
+       <div class="about__info">
+        <p class="about__text">
+         <span class="about__highlight">Hey there!</span> I'm a creative
+         technologist and designer based in Denver, Colorado. My journey has
+         been anything but conventional—from carpenter in Philadelphia, to
+         welder in Colorado, to a graduate of CU Boulder's Creative Technology
+         and Design program.
+        </p>
+        <p class="about__text">
+         Today, I'm a <strong>rock climbing wall designer</strong>, combining my
+         hands-on building experience with design thinking to create climbing
+         experiences that challenge and inspire. I bring a unique perspective
+         that bridges physical fabrication with digital design.
+        </p>
+        <p class="about__text">
+         I'm passionate about <em>creativity, inclusivity, and technology</em>.
+         Whether I'm designing a climbing wall, prototyping an interactive
+         installation, or programming a web experience, I approach every project
+         with curiosity and craftsmanship.
+        </p>
+       </div>
+
+       <div class="about__details">
+        <div class="about__detail">
+         <span class="about__detail-icon">📍</span>
+         <span class="about__detail-text">Denver, Colorado</span>
+        </div>
+        <div class="about__detail">
+         <span class="about__detail-icon">🎓</span>
+         <span class="about__detail-text"
+          >B.S. Creative Technology & Design</span
+         >
+        </div>
+        <div class="about__detail">
+         <span class="about__detail-icon">🧗</span>
+         <span class="about__detail-text">Rock Climbing Wall Designer</span>
+        </div>
+       </div>
+
+       <div class="about__buttons">
+        <a
+         href="/assets/resume/Josh_Pattani_Resume.pdf"
+         target="_blank"
+         class="btn btn--primary"
+        >
+         <span>Download Resume</span>
+         <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+         >
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+         </svg>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- ===== SKILLS SECTION ===== -->
+   <section class="skills section" id="skills">
+    <div class="skills__container container">
+     <div class="section__header">
+      <span class="section__subtitle">What I Do</span>
+      <h2 class="section__title">Skills & Expertise</h2>
+     </div>
+
+     <div class="skills__content">
+      <!-- Design Skills -->
+      <div class="skills__category">
+       <div class="skills__category-header">
+        <div class="skills__category-icon">
+         <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+         >
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+         </svg>
+        </div>
+        <h3 class="skills__category-title">Design</h3>
+       </div>
+       <div class="skills__physics-container" data-category="design">
+        <canvas class="skills__canvas"></canvas>
+        <ul
+         class="skills__list"
+         data-skills='["Climbing Wall Design","3D Modeling & CAD","UI/UX Design","Prototyping","Adobe Creative Suite","Figma"]'
+        >
+         <li class="skills__item">
+          <span class="skills__item-name">Climbing Wall Design</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">3D Modeling & CAD</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">UI/UX Design</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Prototyping</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Adobe Creative Suite</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Figma</span>
+         </li>
+        </ul>
+       </div>
+      </div>
+
+      <!-- Development Skills -->
+      <div class="skills__category">
+       <div class="skills__category-header">
+        <div class="skills__category-icon">
+         <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+         >
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+         </svg>
+        </div>
+        <h3 class="skills__category-title">Development</h3>
+       </div>
+       <div class="skills__physics-container" data-category="development">
+        <canvas class="skills__canvas"></canvas>
+        <ul
+         class="skills__list"
+         data-skills='["HTML / CSS / JavaScript","Python","Git & Version Control","Responsive Design","Web Development","Interactive Media"]'
+        >
+         <li class="skills__item">
+          <span class="skills__item-name">HTML / CSS / JavaScript</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Python</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Git & Version Control</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Responsive Design</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Web Development</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Interactive Media</span>
+         </li>
+        </ul>
+       </div>
+      </div>
+
+      <!-- Making/Fabrication Skills -->
+      <div class="skills__category">
+       <div class="skills__category-header">
+        <div class="skills__category-icon">
+         <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+         >
+          <path
+           d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+          ></path>
+         </svg>
+        </div>
+        <h3 class="skills__category-title">Making & Fabrication</h3>
+       </div>
+       <div class="skills__physics-container" data-category="fabrication">
+        <canvas class="skills__canvas"></canvas>
+        <ul
+         class="skills__list"
+         data-skills='["Welding (MIG/TIG)","Carpentry","CNC & Laser Cutting","3D Printing","Electronics & Arduino","Rope Access"]'
+        >
+         <li class="skills__item">
+          <span class="skills__item-name">Welding (MIG/TIG)</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Carpentry</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">CNC & Laser Cutting</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">3D Printing</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Electronics & Arduino</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Rope Access</span>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- ===== PORTFOLIO SECTION ===== -->
+   <section class="portfolio section" id="portfolio">
+    <div class="portfolio__container container">
+     <div class="section__header">
+      <span class="section__subtitle">My Work</span>
+      <h2 class="section__title">Featured Projects</h2>
+     </div>
+
+     <!-- Portfolio Filter -->
+     <div class="portfolio__filters">
+      <button class="portfolio__filter active" data-filter="all">All</button>
+      <button class="portfolio__filter" data-filter="design">Design</button>
+      <button class="portfolio__filter" data-filter="development">
+       Development
+      </button>
+      <button class="portfolio__filter" data-filter="fabrication">
+       Fabrication
+      </button>
+     </div>
+
+     <!-- Portfolio Grid -->
+     <div class="portfolio__grid">
+      <!-- Project Card 1 - ReSi Capstone Project -->
+      <article
+       class="portfolio__card"
+       data-category="design development fabrication"
+      >
+       <div class="portfolio__card-image">
+        <img
+         src="/img/webpage/RESI_B2_20.jpg"
+         alt="ReSi - Rendered Embodiment of Social Interaction"
+         class="portfolio__card-img"
+        />
+        <div class="portfolio__card-overlay">
+         <div class="portfolio__card-actions">
+          <a
+           href="/projects/resi.html"
+           class="portfolio__card-link"
+           title="View Project"
+          >
+           <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+           >
+            <path
+             d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            ></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+           </svg>
+          </a>
+          <a
+           href="https://github.com/JoshPattani/ReSi_Rendered-Embodiment-of-Social-Interactions"
+           target="_blank"
+           rel="noopener"
+           class="portfolio__card-link"
+           title="View Code"
+          >
+           <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+           >
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+           </svg>
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="portfolio__card-content">
+        <span class="portfolio__card-category">Capstone Project</span>
+        <h3 class="portfolio__card-title">
+         ReSi: Rendered Embodiment of Social Interaction
+        </h3>
+        <p class="portfolio__card-description">
+         An interactive installation exploring human interaction through
+         biometric data, social neuroscience, and
+         <a
+          href="https://www.sciencedirect.com/topics/neuroscience/hyperscanning"
+          class="portfolio__info-link"
+          target="_blank"
+          >hyperscanning</a
+         >
+         through combination of neurotechnology, and psychophysiology to
+         artistically conceptualize social interactions.
+        </p>
+        <div class="portfolio__card-tech">
+         <span class="portfolio__tech-tag">Interactive Design</span>
+         <span class="portfolio__tech-tag">Creative Coding</span>
+         <span class="portfolio__tech-tag">Fabrication</span>
+        </div>
+       </div>
+      </article>
+
+      <!-- Project Card 2 - Climbing Wall Design (placeholder) -->
+      <article class="portfolio__card" data-category="design fabrication">
+       <div class="portfolio__card-image">
+        <img
+         src="/img/webpage/monstera-gilles-lambert-unsplash.jpg"
+         alt="Climbing Wall Design"
+         class="portfolio__card-img"
+        />
+        <div class="portfolio__card-overlay">
+         <div class="portfolio__card-actions">
+          <a href="#" class="portfolio__card-link" title="View Project">
+           <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+           >
+            <path
+             d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            ></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+           </svg>
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="portfolio__card-content">
+        <span class="portfolio__card-category">Professional Work</span>
+        <h3 class="portfolio__card-title">Rock Climbing Wall Design</h3>
+        <p class="portfolio__card-description">
+         Commercial and residential climbing wall designs combining engineering,
+         aesthetics, and climbing experience.
+        </p>
+        <div class="portfolio__card-tech">
+         <span class="portfolio__tech-tag">CAD</span>
+         <span class="portfolio__tech-tag">Fabrication</span>
+         <span class="portfolio__tech-tag">Design</span>
+        </div>
+       </div>
+      </article>
+
+      <!-- Project Card 3 - Shark Attack Map -->
+      <article class="portfolio__card" data-category="development">
+       <div class="portfolio__card-image">
+        <img
+         src="/assets/img/shark_attacks_hero.png"
+         alt="Melbourne Shark Attack Data Map"
+         class="portfolio__card-img"
+        />
+        <div class="portfolio__card-overlay">
+         <div class="portfolio__card-actions">
+          <a
+           href="/WA/wa14.html"
+           class="portfolio__card-link"
+           title="View Project"
+          >
+           <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+           >
+            <path
+             d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+            ></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+           </svg>
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="portfolio__card-content">
+        <span class="portfolio__card-category">Data Visualization</span>
+        <h3 class="portfolio__card-title">
+         Curious About Shark Attacks in Melbourne?
+        </h3>
+        <p class="portfolio__card-description">
+         Interactive map visualization of shark attack incidents off the coast
+         of Melbourne using Mapbox GL JS and geospatial data.
+        </p>
+        <div class="portfolio__card-tech">
+         <span class="portfolio__tech-tag">Mapbox GL</span>
+         <span class="portfolio__tech-tag">JavaScript</span>
+         <span class="portfolio__tech-tag">Geospatial Data</span>
+        </div>
+       </div>
+      </article>
+
+      <!-- Add more project cards as needed -->
+     </div>
+
+     <!-- View All Projects Link -->
+     <div class="portfolio__more">
+      <a
+       href="https://github.com/JoshPattani?tab=repositories"
+       target="_blank"
+       class="btn btn--outline"
+      >
+       <span>View All Projects on GitHub</span>
+       <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+       >
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+       </svg>
+      </a>
+     </div>
+    </div>
+   </section>
+
+   <!-- ===== EXPERIENCE SECTION ===== -->
+   <section class="experience section" id="experience">
+    <div class="experience__container container">
+     <div class="section__header">
+      <span class="section__subtitle">My Journey</span>
+      <h2 class="section__title">Experience</h2>
+     </div>
+
+     <div class="experience__content">
+      <div class="experience__timeline">
+       <!-- Current Position -->
+       <div class="experience__item">
+        <div class="experience__marker"></div>
+        <div class="experience__card">
+         <span class="experience__date">May 2025 - Present</span>
+         <h3 class="experience__title">Design Coordinator</h3>
+         <span class="experience__company">Eldorado Climbing</span>
+         <p class="experience__description">
+          Designing commercial and residential climbing walls, creating CAD
+          models, and collaborating with fabrication teams to bring climbing
+          experiences to life.
+         </p>
+        </div>
+       </div>
+
+       <!-- Education -->
+       <div class="experience__item">
+        <div class="experience__marker"></div>
+        <div class="experience__card">
+         <span class="experience__date">2020 - 2025</span>
+         <h3 class="experience__title">B.S. Creative Technology & Design</h3>
+         <span class="experience__company">University of Colorado Boulder</span>
+         <p class="experience__description">
+          Studied the intersection of design, technology, and making. Completed
+          capstone project and developed skills in programming, fabrication, and
+          design thinking.
+         </p>
+        </div>
+       </div>
+
+       <!-- Previous Experience -->
+       <div class="experience__item">
+        <div class="experience__marker"></div>
+        <div class="experience__card">
+         <span class="experience__date">Previous</span>
+         <h3 class="experience__title">Welder & Fabricator</h3>
+         <span class="experience__company">Eldorado Climbing</span>
+         <p class="experience__description">
+          Built climbing walls across the country, developed welding and
+          fabrication expertise, rope access skills, and equipment operation
+          experience.
+         </p>
+        </div>
+       </div>
+
+       <!-- Earlier Experience -->
+       <div class="experience__item">
+        <div class="experience__marker"></div>
+        <div class="experience__card">
+         <span class="experience__date">Earlier</span>
+         <h3 class="experience__title">Carpenter</h3>
+         <span class="experience__company">Philadelphia, PA & Colorado</span>
+         <p class="experience__description">
+          Started my career in residential and commercial construction,
+          developing foundational skills in building and craftsmanship.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- ===== CONTACT SECTION ===== -->
+   <section class="contact section" id="contact">
+    <div class="contact__container container">
+     <div class="section__header">
+      <span class="section__subtitle">Get In Touch</span>
+      <h2 class="section__title">Let's Connect</h2>
+     </div>
+
+     <div class="contact__content">
+      <!-- Contact Form -->
+      <div class="contact__form-wrapper">
+       <form
+        class="contact__form"
+        id="contact-form"
+        action="https://formspree.io/f/myzrplok"
+        method="POST"
+       >
+        <div class="form__group">
+         <label for="name" class="form__label">Name</label>
+         <input
+          type="text"
+          id="name"
+          name="name"
+          class="form__input"
+          placeholder="Your name"
+          required
+         />
+        </div>
+
+        <div class="form__group">
+         <label for="email" class="form__label">Email</label>
+         <input
+          type="email"
+          id="email"
+          name="email"
+          class="form__input"
+          placeholder="your.email@example.com"
+          required
+         />
+        </div>
+
+        <div class="form__group">
+         <label for="subject" class="form__label">Subject</label>
+         <input
+          type="text"
+          id="subject"
+          name="subject"
+          class="form__input"
+          placeholder="What's this about?"
+         />
+        </div>
+
+        <div class="form__group">
+         <label for="message" class="form__label">Message</label>
+         <textarea
+          id="message"
+          name="message"
+          class="form__textarea"
+          rows="5"
+          placeholder="Tell me about your project or idea..."
+          required
+         ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary form__submit">
+         <span>Send Message</span>
+         <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+         >
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+         </svg>
+        </button>
+       </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact__info">
+       <p class="contact__text">
+        I'm always interested in hearing about new projects, creative
+        opportunities, or just connecting with fellow makers and designers. Feel
+        free to reach out!
+       </p>
+
+       <div class="contact__methods">
+        <div class="contact__method">
+         <div class="contact__method-icon">
+          <svg
+           xmlns="http://www.w3.org/2000/svg"
+           width="24"
+           height="24"
+           viewBox="0 0 24 24"
+           fill="none"
+           stroke="currentColor"
+           stroke-width="2"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+          >
+           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+           <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+         </div>
+         <div class="contact__method-content">
+          <h4 class="contact__method-title">Location</h4>
+          <p class="contact__method-text">Denver, Colorado</p>
+         </div>
+        </div>
+
+        <div class="contact__method">
+         <div class="contact__method-icon">
+          <svg
+           xmlns="http://www.w3.org/2000/svg"
+           width="24"
+           height="24"
+           viewBox="0 0 24 24"
+           fill="none"
+           stroke="currentColor"
+           stroke-width="2"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+          >
+           <path
+            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+           ></path>
+           <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+         </div>
+         <div class="contact__method-content">
+          <h4 class="contact__method-title">Email</h4>
+          <p class="contact__method-text">
+           <a href="mailto:josh.pattani@gmail.com">josh.pattani@gmail.com</a>
           </p>
-          <p class="bio-text">Thanks for stopping by!</p>
+         </div>
         </div>
-      </section>
-      <!--Footer-->
-      <footer>
-        <div>
-          <img id="logo" src="/img/webpage/JP_logoH.png" alt="Josh's logo" />
+       </div>
+
+       <div class="contact__social">
+        <h4 class="contact__social-title">Connect with me</h4>
+        <div class="contact__social-links">
+         <a
+          href="https://github.com/JoshPattani"
+          target="_blank"
+          rel="noopener"
+          class="contact__social-link"
+         >
+          <svg
+           xmlns="http://www.w3.org/2000/svg"
+           width="24"
+           height="24"
+           viewBox="0 0 24 24"
+           fill="currentColor"
+          >
+           <path
+            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+           />
+          </svg>
+          <span>GitHub</span>
+         </a>
+         <a
+          href="https://www.linkedin.com/in/josh-pattani/"
+          target="_blank"
+          rel="noopener"
+          class="contact__social-link"
+         >
+          <svg
+           xmlns="http://www.w3.org/2000/svg"
+           width="24"
+           height="24"
+           viewBox="0 0 24 24"
+           fill="currentColor"
+          >
+           <path
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+           />
+          </svg>
+          <span>LinkedIn</span>
+         </a>
         </div>
-        <div id="footer-text">
-          <p>Joshua B. Pattani</p>
-          <p>Boulder, CO</p>
-          <p>&copy; 2023</p>
-          <p></p>
-        </div>
-      </footer>
-    </main>
-  </body>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+   <div class="footer__container container">
+    <div class="footer__content">
+     <div class="footer__brand">
+      <img
+       src="/img/webpage/JP_logoH.png"
+       alt="Josh Pattani Logo"
+       class="footer__logo"
+      />
+      <p class="footer__tagline">Designer • Developer • Maker • Engineer</p>
+     </div>
+
+     <div class="footer__links">
+      <a href="#home" class="footer__link">Home</a>
+      <a href="#about" class="footer__link">About</a>
+      <a href="#portfolio" class="footer__link">Portfolio</a>
+      <a href="#contact" class="footer__link">Contact</a>
+     </div>
+    </div>
+
+    <div class="footer__bottom">
+     <p class="footer__copyright">
+      &copy; 2025 Josh Pattani. Designed & Built by ya boy with ❤️ in Denver, CO
+     </p>
+    </div>
+   </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
+   <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+   >
+    <polyline points="18 15 12 9 6 15"></polyline>
+   </svg>
+  </a>
+
+  <!-- JavaScript -->
+  <script src="/JS/portfolio.js"></script>
+  <script src="/JS/skills-physics.js"></script>
+ </body>
 </html>
