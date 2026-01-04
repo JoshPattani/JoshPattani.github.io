@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/wa11.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <header>The Gang Gets a Quote Generator</header>
+
+        <div class="quotes">
+          <div class="actor-image-container" >
+            <img class="actor-image" id="js-actor-image" src="../assets/img/sunny.png" alt="It's Always Sunny in Philadelphia">
+          </div>
+          <div class="text-container">
+            <div class="quote-text" id="js-quote-text"></div>
+            <div class="quote-author" id="js-quote-author"></div>
+            <div class="episode-text" id="js-episode-text"></div>
+          </div>
+        </div>
+
+        <div class="controls" >
+          <button type="button" id="js-new-quote" class="new-quote button">
+            Generate New Quote
+          </button>
+          <button type="button" id="js-episode" class="episode button">
+            Show Episode
+          </button>
+        </div>
+    </div>
+
+    <div class="video-wrapper" >
+      <video id="js-video" 
+      playsinline 
+      autoplay 
+      muted 
+      loop 
+      poster="../assets/img/sunnyIntroStill.jpg">
+
+        <source src="../assets/videos/sunnyIntro.webm" type="video/webm">
+        <source src="../assets/videos/sunnyIntro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="footer">
+      <div class="desc">
+        <p>This app will generate random quotes from the greatest sitcom ever made, <em>It's Always Sunny in Philadelphia</em>. Click the "Generate New Quote" button to generate a random quote from the show. Click the "Show Episode" button to reveal the origin season and episode of the quote (shown in mobile).</p>
+        <br>
+        <p>This quote generator was extended from the previous assignment by adding images of most characters being quoted. The style of the page is influenced by the show's aesthetics. Links to some available streaming options are added below.</p>
+        <br> 
+        <p>Quotes are sourced from <a href="http://sunnyquotes.net/api/" target="_blank">Sunny Quotes API</a>.</p>
+      </div>
+
+      <div class="links">
+        <p>Don't be a jabroni, go watch the show!</p>
+        <div>
+          <a href="https://www.hulu.com/series/its-always-sunny-in-philadelphia-2171423f-3326-4dfa-b193-b40494e60109" target="_blank">Hulu</a>
+          <a href="https://www.imdb.com/title/tt0472954/" target="_blank">IMDB</a>
+          <a href="https://www.amazon.com/gp/video/detail/B09MYRDT2T/ref=atv_dp_share_cu_r" target="_blank">Prime Video</a>        
+        </div>
+      </div>
+      
+      <div class="credit">
+        <p class="footnote">Created by <a href="https://joshpattani.github.io/" target="_blank">Josh Pattani</a>
+        </p>
+      </div>
+    </div>
+    <script src="../JS/wa11.js"></script>
+</body>
+</html>

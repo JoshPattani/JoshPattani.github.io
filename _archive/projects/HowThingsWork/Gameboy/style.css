@@ -1,0 +1,94 @@
+/* 
+CSS HEX
+--caribbean-current: #326873ff;
+--black: #010101ff;
+--dark-cyan: #318980ff;
+--rich-black: #071013ff;
+--xanthous: #FAB220ff;
+*/
+
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Press Start 2P", cursive; /* This is a pixelated font */
+  background-color: #318980ff; /* A Gameboy Color palette */
+  color: #0f380f; /* A Gameboy Color palette */
+}
+
+header {
+  background-color: #306230; /* A Gameboy Color palette */
+  padding: 10px 0;
+  text-align: center;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 2em;
+  color: #daa520; /* Golden rod color */
+  text-align: center;
+  padding: 10px 0;
+}
+
+section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #8bac0f; /* A Gameboy Color palette */
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #0f380f; /* A Gameboy Color palette */
+}
+
+/* Add more specific styles for your sections, images, and other elements */
+
+.poster-container {
+  width: 768px;
+  margin: 20px auto;
+  background-image: url("Layer_1.png");
+  background-size: cover;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.section {
+  background: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Semi-transparent black for text readability */
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.image-container {
+  text-align: center;
+  margin-top: 20px;
+}
+.image-container img {
+  max-width: 512px;
+  min-width: 256px;
+  height: auto;
+  border-radius: 5px;
+}

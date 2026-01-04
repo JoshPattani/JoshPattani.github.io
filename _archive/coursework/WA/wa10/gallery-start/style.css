@@ -1,0 +1,108 @@
+/* font family import from Adobe */
+@import url("https://use.typekit.net/kde0sgd.css");
+
+html{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* General body style */
+body{
+  font-family: mongoose, yrsa, arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.7;
+  color: #eee;
+  background-color: #272640;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  display: block;
+  font-family: mongoose, arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2em;
+  margin-block: 0.67em;
+  margin-inline: 0;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 640px;
+  height: 100%;
+}
+
+.full-img {
+  position: relative;
+  display: flex;
+  min-width: 640px;
+  min-height: 480px;
+  border-radius: 5px 5px 0 0;
+}
+
+.displayed-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.overlay {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: rgba(0,0,0,0);
+}
+
+button {
+  border: 0;
+  background: rgba(45, 164, 53,0.8);
+  text-shadow: 1px 1px 1px black;
+  border: 1px solid #999;
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  left: 2px;
+  color: #fff;
+  text-decoration: none;
+  font-family: yrsa, arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+button:hover {
+  border-left: 0.2em solid;
+  border-right: 0.2em solid;
+  border-color: #A62D9E;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: all;
+}
+
+.thumb-bar img {
+  flex: 1;
+  display: block;
+  width: 20%;
+  float: left;
+  cursor: pointer;
+  border-radius: 0 0 5px 5px;
+}

@@ -1,0 +1,293 @@
+/* font stylesheet */
+@import "../CSS/fontStyle.css";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Textile Regular',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: 	#fffddb;
+}
+
+.app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  background-color: rgba(255,180,0,0.98);
+  border-radius: 15px;
+  border: 4px solid white;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  margin-top: 1%;
+}
+
+header {
+  width: 100%;
+  font-size: 24pt;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #ffd656;
+}
+
+.quotes {
+  padding: 20px 50px;
+  min-height: 200px;
+}
+
+.actor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0;
+}
+
+.actor-image-container {
+  max-width: 200px;
+  max-height: 200px;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10%;
+  border: 3px solid white;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.quote-text {
+  padding-bottom: 20px;
+  font-size: 24pt;
+  color: black;
+  text-align: center;
+  font-family: 'tradegothic_ltregular', Courier, monospace;
+}
+
+.quote-author {
+  padding-bottom: 10px;
+  font-size: 24pt;
+  color: black;
+  text-align: center;
+  font-family: 'tradegothic_lt_bolditalic', Courier, monospace;
+}
+
+.episode-text {
+  padding-bottom: 10px;
+  font-size: 14pt;
+  color: black;
+  text-align: center;
+  font-family: 'tradegothic_ltregular', Courier, monospace;
+  display: none;
+}
+
+/* Buttons */
+
+.controls {
+  width: 100%;
+  padding: 20px 50px;
+}
+
+.button {
+  display: block;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.episode {
+  background-color: 	black;
+  text-decoration: none;
+}
+
+.episode:hover {
+  background-color: 	rgb(28, 28, 28);
+}
+
+.new-quote {
+  background-color: #2b2300;
+  margin-bottom: 15px;
+}
+
+.new-quote:hover {
+  background-color: #493d04;
+}
+
+.new-quote:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  bottom: 0;
+  width: 100%;
+  margin-top: 25%;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  font-family: 'tradegothic_lt_condeighteenRg',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.desc {
+  position: relative;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  background-color: 	#f0bd44;
+  border-radius: 15px;
+  font-size: 16pt;
+  text-align: center;
+  border: 2px solid black;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  padding: 10px;
+  font-family: 'tradegothic_ltregular', 'Courier New', Courier, monospace;
+  margin-bottom: 0;
+}
+
+.credit {
+  padding: 10px;
+  border-top: 1px solid #ffd656;
+  font-size: 13pt;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.links p {
+  display: inline;
+  font-size: 14pt;
+  text-align: center;
+  font-family: 'tradegothic_ltregular', 'Courier New', Courier, monospace;
+  padding: 0;
+}
+
+video {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.video-wrapper {
+  border: 2px solid #000;
+  max-width: 100%;
+  min-height: 800px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: #2b2300;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .app {
+    width: 100%;
+    position: relative;
+    top: 0;
+    margin: 0;
+    margin-bottom: 0;
+    margin-top: 70%;
+    display: block;
+  }
+
+  header {
+    font-size: 20pt;
+  }
+  .quote-text {
+    font-size: 18px;
+  }
+
+  .quote-author {
+    font-size: 18px;
+  }
+
+  .episode-text {
+    font-size: 12pt;
+    display: block;
+  }
+
+  .episode {
+    visibility: hidden;
+  }
+
+  .button {
+    font-size: 16px;
+  }
+
+  .footer {
+    font-size: 16px;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+  .desc {
+    font-size: 12pt;
+    top: 0;
+
+  }
+
+  .credit {
+    font-size: 12pt;
+    color: #cccccc;
+  }
+
+  .links p {
+    font-size: 12pt;
+    color: #ffffff;
+  }
+
+  .video-wrapper {
+    display: none;
+  }
+
+}

@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  filter: contrast(50);
+}
+
+#container .c {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: #000;
+  border-radius: 50%;
+  filter: blur(15px);
+  transition: 2s;
+}

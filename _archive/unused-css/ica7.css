@@ -1,0 +1,46 @@
+body{
+  background-color: khaki;
+}
+#box1{
+  width: 25vw;
+  height: 20vh;
+  background-color: indianred;
+}
+
+#box1:hover{
+  background-color: purple;
+}
+
+#box2{
+  width: 25vw;
+  height:20vh;
+  position: relative;
+  background-color: firebrick;
+  animation-name: box2move;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes box2move{
+  0%{
+    background-color: firebrick;
+    transform-origin: center;
+    transform: rotate(0);
+    top: 0;
+    left: 0;
+  }
+  50%{
+    background-color: maroon;
+    width: 15vw;
+    height: 12vh;
+    top: 20vh;
+    left: 4vw;
+  }
+  100%{
+    background-color: firebrick;
+    transform-origin: center;
+    transform: rotate(360deg);
+    top: 0;
+    left: 0;
+  }
+}
