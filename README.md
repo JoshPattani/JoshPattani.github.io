@@ -51,6 +51,7 @@ JoshPattani.github.io/
 - **Smooth Animations** - CSS transitions and scroll-triggered reveals
 - **Project Showcases** - Detailed pages for featured work
 - **Contact Form** - Formspree integration for inquiries
+- **Private Analytics** - Lightweight Supabase-backed traffic dashboard
 
 ---
 
@@ -61,6 +62,7 @@ JoshPattani.github.io/
 - **Matter.js** - Physics engine for interactive skill bubbles
 - **Mapbox GL** - Interactive shark attack data visualization
 - **Google Fonts** - Space Grotesk & Inter typography
+- **Supabase** - Optional private analytics storage, auth, and Edge Function
 
 ---
 
@@ -75,6 +77,15 @@ python -m http.server 8000
 
 # Or use VS Code Live Server extension
 ```
+
+## Analytics Setup
+
+This repo includes an optional privacy-conscious analytics tracker and private
+`/admin/` dashboard backed by Supabase. The tracker is disabled by default until
+`JS/analytics-config.js` is filled with public Supabase values.
+
+See [docs/analytics.md](docs/analytics.md) for Supabase setup, RLS, Edge
+Function deployment, admin allowlist setup, local testing, and the privacy note.
 
 ---
 
@@ -93,7 +104,7 @@ Old coursework and experimental projects have been moved to `_archive/` for easy
 
 ## 📄 License
 
-© 2025 Josh Pattani. All rights reserved.
+© 2026 Josh Pattani. All rights reserved.
 
 ---
 

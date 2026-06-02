@@ -14,15 +14,23 @@
 <body>
   <div id="map"></div>
   <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiaWdnaW8iLCJhIjoiY2xndDZicG03MXAwYTNybGhwd283NmszdyJ9.eMRkQI_RHtpDRJ1GpnqkCQ';
-    const map = new mapboxgl.Map({
-    container: 'map', // container ID
-    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-    style: 'mapbox://styles/iggio/clh4dl2of008h01r5e0li6rvx', // style URL
-    center: [144.946457, -37.840935], // starting position [lng, lat]
-    zoom: 7 // starting zoom
-    });
+    const mapboxToken = window.MAPBOX_ACCESS_TOKEN || '';
+
+    if (!mapboxToken) {
+      document.getElementById('map').innerHTML = '<div style="display:grid;place-items:center;height:100%;font:16px sans-serif;color:#333;background:#f4f4f4;">Map unavailable.</div>';
+    } else {
+      mapboxgl.accessToken = mapboxToken;
+      const map = new mapboxgl.Map({
+      container: 'map', // container ID
+      // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+      style: 'mapbox://styles/iggio/clh4dl2of008h01r5e0li6rvx', // style URL
+      center: [144.946457, -37.840935], // starting position [lng, lat]
+      zoom: 7 // starting zoom
+      });
+    }
   </script>
+  <script src="/JS/analytics-config.js"></script>
+  <script src="/JS/analytics.js"></script>
   
 </body>
 </html>

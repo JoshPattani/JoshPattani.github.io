@@ -1,0 +1,4 @@
+project_id = "portfolio-analytics"
+
+[functions.track-visit]
+verify_jwt = false
