@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
  <head>
   <meta charset="UTF-8" />
@@ -141,13 +141,17 @@
        <span class="hero__subtitle">Hello, I'm</span>
        <h1 class="hero__title">Josh Pattani</h1>
        <div class="hero__roles">
-        <span class="hero__role" data-text="Designer">Designer</span>
-        <span class="hero__role-separator">•</span>
-        <span class="hero__role" data-text="Developer">Developer</span>
-        <span class="hero__role-separator">•</span>
+        <span class="hero__role" data-text="Creative Technologist"
+         >Creative Technologist</span
+        >
+        <span class="hero__role-separator">&bull;</span>
+        <span class="hero__role" data-text="Design Engineer"
+         >Design Engineer</span
+        >
+        <span class="hero__role-separator">&bull;</span>
+        <span class="hero__role" data-text="Fabricator">Fabricator</span>
+        <span class="hero__role-separator">&bull;</span>
         <span class="hero__role" data-text="Maker">Maker</span>
-        <span class="hero__role-separator">•</span>
-        <span class="hero__role" data-text="Engineer">Engineer</span>
        </div>
        <!-- <p class="hero__description">
                 Crafting experiences that inspire movement, creativity, and connection. 
@@ -155,9 +159,9 @@
                 things that bring people together.
               </p> -->
        <p class="hero__description">
-        an <b>multidisciplinary designer</b> and
-        <b><i>creative powerhouse</i></b> who blends curiosity and creative
-        insight.
+        I build interactive systems that connect physical craft, digital media,
+        and immersive experience, from fabricated environments and hardware
+        prototypes to responsive audiovisual tools.
        </p>
        <div class="hero__buttons">
         <a href="#portfolio" class="btn btn--primary">
@@ -229,7 +233,7 @@
       <div class="about__image">
        <div class="about__image-wrapper">
         <img
-         src="/img/webpage/monstera-gilles-lambert-unsplash.jpg"
+         src="/img/webpage/portrait.jpg"
          alt="About Josh"
          class="about__img"
         />
@@ -237,9 +241,11 @@
        </div>
        <!-- Stats cards -->
        <div class="about__stats">
-        <div class="about__stat">
-         <span class="about__stat-number">8+</span>
-         <span class="about__stat-label">Months in Design Career</span>
+        <div class="about__stat" data-duration-start="2025-05-01">
+         <span class="about__stat-number" data-duration-value>13+</span>
+         <span class="about__stat-label" data-duration-label
+          >Months in Design Career</span
+         >
         </div>
         <div class="about__stat">
          <span class="about__stat-number">CU</span>
@@ -252,22 +258,28 @@
        <div class="about__info">
         <p class="about__text">
          <span class="about__highlight">Hey there!</span> I'm a creative
-         technologist and designer based in Denver, Colorado. My journey has
-         been anything but conventional—from carpenter in Philadelphia, to
-         welder in Colorado, to a graduate of CU Boulder's Creative Technology
-         and Design program.
+         technologist and design engineer based in Denver, Colorado. My path has
+         moved from carpentry and welding into Creative Technology & Design, so
+         I bring shop-floor judgment into digital and interactive work.
         </p>
         <p class="about__text">
-         Today, I'm a <strong>rock climbing wall designer</strong>, combining my
-         hands-on building experience with design thinking to create climbing
-         experiences that challenge and inspire. I bring a unique perspective
-         that bridges physical fabrication with digital design.
+         Today, I work as a <strong>Production Designer</strong> at RiNo Sign
+         Works, where design intent, fabrication methods, CNC workflows, client
+         revisions, documentation, and install realities all have to line up.
+         That role keeps me close to the physical side of design while
+         sharpening how I translate ideas into clear, buildable,
+         production-ready outcomes.
         </p>
         <p class="about__text">
-         I'm passionate about <em>creativity, inclusivity, and technology</em>.
-         Whether I'm designing a climbing wall, prototyping an interactive
-         installation, or programming a web experience, I approach every project
-         with curiosity and craftsmanship.
+         I am drawn to
+         <em
+          >immersive environments, physical computing, and participant-driven
+          systems</em
+         >. Whether I am prototyping a sensor-based installation,
+         troubleshooting hardware, developing a responsive web experience, or
+         preparing work for fabrication, I try to make the final result clear,
+         functional, maintainable, and grounded in how things actually get
+         built.
         </p>
        </div>
 
@@ -284,7 +296,9 @@
         </div>
         <div class="about__detail">
          <span class="about__detail-icon">🧗</span>
-         <span class="about__detail-text">Rock Climbing Wall Designer</span>
+         <span class="about__detail-text"
+          >Creative Technologist / Fabricator</span
+         >
         </div>
        </div>
 
@@ -326,7 +340,7 @@
      </div>
 
      <div class="skills__content">
-      <!-- Design Skills -->
+      <!-- Interactive Systems Skills -->
       <div class="skills__category">
        <div class="skills__category-header">
         <div class="skills__category-icon">
@@ -341,91 +355,48 @@
           stroke-linecap="round"
           stroke-linejoin="round"
          >
-          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-          <polyline points="2 17 12 22 22 17"></polyline>
-          <polyline points="2 12 12 17 22 12"></polyline>
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M12 1v6"></path>
+          <path d="M12 17v6"></path>
+          <path d="M4.22 4.22l4.24 4.24"></path>
+          <path d="M15.54 15.54l4.24 4.24"></path>
+          <path d="M1 12h6"></path>
+          <path d="M17 12h6"></path>
+          <path d="M4.22 19.78l4.24-4.24"></path>
+          <path d="M15.54 8.46l4.24-4.24"></path>
          </svg>
         </div>
-        <h3 class="skills__category-title">Design</h3>
+        <h3 class="skills__category-title">Interactive Systems</h3>
        </div>
-       <div class="skills__physics-container" data-category="design">
+       <div class="skills__physics-container" data-category="interactive">
         <canvas class="skills__canvas"></canvas>
         <ul
          class="skills__list"
-         data-skills='["Climbing Wall Design","3D Modeling & CAD","UI/UX Design","Prototyping","Adobe Creative Suite","Figma"]'
+         data-skills='["Physical Computing","Sensor Integration","Arduino / Embedded Systems","Interactive Installation Design","Real-time Data","Audiovisual Systems"]'
         >
          <li class="skills__item">
-          <span class="skills__item-name">Climbing Wall Design</span>
+          <span class="skills__item-name">Physical Computing</span>
          </li>
          <li class="skills__item">
-          <span class="skills__item-name">3D Modeling & CAD</span>
+          <span class="skills__item-name">Sensor Integration</span>
          </li>
          <li class="skills__item">
-          <span class="skills__item-name">UI/UX Design</span>
+          <span class="skills__item-name">Arduino / Embedded Systems</span>
          </li>
          <li class="skills__item">
-          <span class="skills__item-name">Prototyping</span>
+          <span class="skills__item-name">Interactive Installation Design</span>
          </li>
          <li class="skills__item">
-          <span class="skills__item-name">Adobe Creative Suite</span>
+          <span class="skills__item-name">Real-time Data</span>
          </li>
          <li class="skills__item">
-          <span class="skills__item-name">Figma</span>
+          <span class="skills__item-name">Audiovisual Systems</span>
          </li>
         </ul>
        </div>
       </div>
 
-      <!-- Development Skills -->
-      <div class="skills__category">
-       <div class="skills__category-header">
-        <div class="skills__category-icon">
-         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-         >
-          <polyline points="16 18 22 12 16 6"></polyline>
-          <polyline points="8 6 2 12 8 18"></polyline>
-         </svg>
-        </div>
-        <h3 class="skills__category-title">Development</h3>
-       </div>
-       <div class="skills__physics-container" data-category="development">
-        <canvas class="skills__canvas"></canvas>
-        <ul
-         class="skills__list"
-         data-skills='["HTML / CSS / JavaScript","Python","Git & Version Control","Responsive Design","Web Development","Interactive Media"]'
-        >
-         <li class="skills__item">
-          <span class="skills__item-name">HTML / CSS / JavaScript</span>
-         </li>
-         <li class="skills__item">
-          <span class="skills__item-name">Python</span>
-         </li>
-         <li class="skills__item">
-          <span class="skills__item-name">Git & Version Control</span>
-         </li>
-         <li class="skills__item">
-          <span class="skills__item-name">Responsive Design</span>
-         </li>
-         <li class="skills__item">
-          <span class="skills__item-name">Web Development</span>
-         </li>
-         <li class="skills__item">
-          <span class="skills__item-name">Interactive Media</span>
-         </li>
-        </ul>
-       </div>
-      </div>
-
-      <!-- Making/Fabrication Skills -->
+      <!-- Fabrication & Installation Skills -->
       <div class="skills__category">
        <div class="skills__category-header">
         <div class="skills__category-icon">
@@ -445,31 +416,130 @@
           ></path>
          </svg>
         </div>
-        <h3 class="skills__category-title">Making & Fabrication</h3>
+        <h3 class="skills__category-title">Fabrication & Installation</h3>
        </div>
        <div class="skills__physics-container" data-category="fabrication">
         <canvas class="skills__canvas"></canvas>
         <ul
          class="skills__list"
-         data-skills='["Welding (MIG/TIG)","Carpentry","CNC & Laser Cutting","3D Printing","Electronics & Arduino","Rope Access"]'
+         data-skills='["Welding (MIG/TIG)","Carpentry / Fabrication","CNC Workflows","Signage / Production Design","Hardware Prototyping","Troubleshooting"]'
         >
          <li class="skills__item">
           <span class="skills__item-name">Welding (MIG/TIG)</span>
          </li>
          <li class="skills__item">
-          <span class="skills__item-name">Carpentry</span>
+          <span class="skills__item-name">Carpentry / Fabrication</span>
          </li>
          <li class="skills__item">
-          <span class="skills__item-name">CNC & Laser Cutting</span>
+          <span class="skills__item-name">CNC Workflows</span>
          </li>
          <li class="skills__item">
-          <span class="skills__item-name">3D Printing</span>
+          <span class="skills__item-name">Signage / Production Design</span>
          </li>
          <li class="skills__item">
-          <span class="skills__item-name">Electronics & Arduino</span>
+          <span class="skills__item-name">Hardware Prototyping</span>
          </li>
          <li class="skills__item">
-          <span class="skills__item-name">Rope Access</span>
+          <span class="skills__item-name">Troubleshooting</span>
+         </li>
+        </ul>
+       </div>
+      </div>
+
+      <!-- Digital Design & Documentation Skills -->
+      <div class="skills__category">
+       <div class="skills__category-header">
+        <div class="skills__category-icon">
+         <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+         >
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+         </svg>
+        </div>
+        <h3 class="skills__category-title">Digital Design & Documentation</h3>
+       </div>
+       <div class="skills__physics-container" data-category="documentation">
+        <canvas class="skills__canvas"></canvas>
+        <ul
+         class="skills__list"
+         data-skills='["3D Modeling & CAD","Technical Documentation","Production Drawings","Adobe Creative Suite","Figma","Responsive Design"]'
+        >
+         <li class="skills__item">
+          <span class="skills__item-name">3D Modeling & CAD</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Technical Documentation</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Production Drawings</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Adobe Creative Suite</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Figma</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Responsive Design</span>
+         </li>
+        </ul>
+       </div>
+      </div>
+
+      <!-- Creative Coding / Prototyping Skills -->
+      <div class="skills__category">
+       <div class="skills__category-header">
+        <div class="skills__category-icon">
+         <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+         >
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+         </svg>
+        </div>
+        <h3 class="skills__category-title">Creative Coding / Prototyping</h3>
+       </div>
+       <div class="skills__physics-container" data-category="prototyping">
+        <canvas class="skills__canvas"></canvas>
+        <ul
+         class="skills__list"
+         data-skills='["HTML / CSS / JavaScript","Python","MAX/MSP","Ableton Live","Git & Version Control","Rapid Prototyping"]'
+        >
+         <li class="skills__item">
+          <span class="skills__item-name">HTML / CSS / JavaScript</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Python</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">MAX/MSP</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Ableton Live</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Git & Version Control</span>
+         </li>
+         <li class="skills__item">
+          <span class="skills__item-name">Rapid Prototyping</span>
          </li>
         </ul>
        </div>
@@ -477,7 +547,6 @@
      </div>
     </div>
    </section>
-
    <!-- ===== PORTFOLIO SECTION ===== -->
    <section class="portfolio section" id="portfolio">
     <div class="portfolio__container container">
@@ -567,21 +636,17 @@
          ReSi: Rendered Embodiment of Social Interaction
         </h3>
         <p class="portfolio__card-description">
-         An interactive installation exploring human interaction through
-         biometric data, social neuroscience, and
-         <a
-          href="https://www.sciencedirect.com/topics/neuroscience/hyperscanning"
-          class="portfolio__info-link"
-          target="_blank"
-          >hyperscanning</a
-         >
-         through combination of neurotechnology, and psychophysiology to
-         artistically conceptualize social interactions.
+         An immersive interactive installation that turns biometric and
+         biosignal data into real-time audiovisual output, using sensors,
+         participant input, and system integration to make social connection
+         visible in space.
         </p>
         <div class="portfolio__card-tech">
-         <span class="portfolio__tech-tag">Interactive Design</span>
-         <span class="portfolio__tech-tag">Creative Coding</span>
-         <span class="portfolio__tech-tag">Fabrication</span>
+         <span class="portfolio__tech-tag">Biometric Data</span>
+         <span class="portfolio__tech-tag">Real-time AV</span>
+         <span class="portfolio__tech-tag">Sensors</span>
+         <span class="portfolio__tech-tag">System Integration</span>
+         <span class="portfolio__tech-tag">Installation Design</span>
         </div>
        </div>
       </article>
@@ -596,7 +661,10 @@
          src="/img/projects/synthesia/synthesia-hero.jpg"
          alt="Synthesia custom MIDI synthesizer and audio/visual controller"
          class="portfolio__card-img"
-         onerror="this.closest('.portfolio__card-image').classList.add('is-missing'); this.remove();"
+         onerror="
+          this.closest('.portfolio__card-image').classList.add('is-missing');
+          this.remove();
+         "
         />
         <div class="portfolio__media-placeholder" aria-hidden="true">
          <span>Synthesia</span>
@@ -636,18 +704,18 @@
         </span>
         <h3 class="portfolio__card-title">Synthesia</h3>
         <p class="portfolio__card-description">
-         Custom Moog-inspired MIDI synthesizer and audio/visual controller
-         combining microcontroller programming, tactile interface design, CAD
-         fabrication, and synchronized visual feedback.
+         Active physical-computing case study for a custom Moog-inspired MIDI
+         controller, combining Arduino / ESP32 work, potentiometers, toggle
+         switches, multiplexed inputs, LEDs, audio behavior, and enclosure
+         fabrication.
         </p>
         <div class="portfolio__card-tech">
          <span class="portfolio__tech-tag">Physical Computing</span>
-         <span class="portfolio__tech-tag">MIDI</span>
          <span class="portfolio__tech-tag">Arduino / ESP32</span>
-         <span class="portfolio__tech-tag">Fabrication</span>
-         <span class="portfolio__tech-tag">Creative Coding</span>
-         <span class="portfolio__tech-tag">Interactive Hardware</span>
-         <span class="portfolio__tech-tag">CAD</span>
+         <span class="portfolio__tech-tag">Multiplexers</span>
+         <span class="portfolio__tech-tag">LED Feedback</span>
+         <span class="portfolio__tech-tag">Audio Synthesis</span>
+         <span class="portfolio__tech-tag">Custom Enclosure</span>
         </div>
        </div>
       </article>
@@ -656,7 +724,7 @@
       <article class="portfolio__card" data-category="design fabrication">
        <div class="portfolio__card-image">
         <img
-         src="/img/webpage/monstera-gilles-lambert-unsplash.jpg"
+         src="/img/webpage/climbingWall_showcase.jpg"
          alt="Climbing Wall Design"
          class="portfolio__card-img"
         />
@@ -766,7 +834,7 @@
        target="_blank"
        class="btn btn--outline"
       >
-       <span>View All Projects on GitHub</span>
+       <span>View Projects on GitHub</span>
        <svg
         xmlns="http://www.w3.org/2000/svg"
         width="18"
@@ -805,8 +873,8 @@
          <span class="experience__company">Eldorado Climbing</span>
          <p class="experience__description">
           Designing commercial and residential climbing walls, creating CAD
-          models, and collaborating with fabrication teams to bring climbing
-          experiences to life.
+          models, coordinating with fabrication teams, and producing clear
+          documentation that supports buildable installation work.
          </p>
         </div>
        </div>
@@ -819,9 +887,10 @@
          <h3 class="experience__title">B.S. Creative Technology & Design</h3>
          <span class="experience__company">University of Colorado Boulder</span>
          <p class="experience__description">
-          Studied the intersection of design, technology, and making. Completed
-          capstone project and developed skills in programming, fabrication, and
-          design thinking.
+          Studied the intersection of design, technology, and making. Built
+          interactive installation, physical-computing, fabrication, and
+          creative coding projects with an emphasis on prototyping and
+          documentation.
          </p>
         </div>
        </div>
@@ -834,9 +903,9 @@
          <h3 class="experience__title">Welder & Fabricator</h3>
          <span class="experience__company">Eldorado Climbing</span>
          <p class="experience__description">
-          Built climbing walls across the country, developed welding and
-          fabrication expertise, rope access skills, and equipment operation
-          experience.
+          Built climbing walls across the country, developing welding,
+          fabrication, rope access, equipment operation, and field
+          troubleshooting experience in real installation environments.
          </p>
         </div>
        </div>
@@ -849,8 +918,9 @@
          <h3 class="experience__title">Carpenter</h3>
          <span class="experience__company">Philadelphia, PA & Colorado</span>
          <p class="experience__description">
-          Started my career in residential and commercial construction,
-          developing foundational skills in building and craftsmanship.
+          Started in residential and commercial construction, developing the
+          carpentry, layout, material handling, and job-site awareness that now
+          inform my design and technology work.
          </p>
         </div>
        </div>
@@ -1075,7 +1145,7 @@
 
     <div class="footer__bottom">
      <p class="footer__copyright">
-      &copy; 2025 Josh Pattani. Designed & Built by ya boy with ❤️ in Denver, CO
+      &copy; 2026 Josh Pattani. Designed & Built by ya boy with ❤️ in Denver, CO
      </p>
     </div>
    </div>

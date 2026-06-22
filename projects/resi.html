@@ -1,259 +1,472 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="RESI: Rendered Embodiment of Social Interactions - A capstone project by Josh Pattani exploring digital representations of human social dynamics." />
-    <meta name="keywords" content="RESI, capstone project, interactive installation, creative technology, CU Boulder" />
-    <meta name="author" content="Josh Pattani" />
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="RESI | Josh Pattani" />
-    <meta property="og:description" content="An interactive installation exploring digital representations of human social dynamics." />
-    <meta property="og:type" content="website" />
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="/CSS/index.css" />
-    <link rel="stylesheet" href="/CSS/project.css" />
-    <title>RESI: Rendered Embodiment of Social Interactions | Josh Pattani</title>
-  </head>
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+   name="description"
+   content="RESI: Rendered Embodiment of Social Interactions - A capstone project by Josh Pattani exploring digital representations of human social dynamics."
+  />
+  <meta
+   name="keywords"
+   content="RESI, capstone project, interactive installation, creative technology, CU Boulder"
+  />
+  <meta name="author" content="Josh Pattani" />
 
-  <body>
-    <!-- Cursor follower for desktop -->
-    <div class="cursor-follower"></div>
-    
-    <!-- Navigation -->
-    <header class="header" id="header">
-      <nav class="nav container">
-        <a href="/" class="nav__logo">
-          <img src="/img/webpage/JP_logo.png" alt="Josh Pattani Logo" class="nav__logo-img" />
-        </a>
-        
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="/" class="nav__link">Home</a>
-            </li>
-            <li class="nav__item">
-              <a href="/#about" class="nav__link">About</a>
-            </li>
-            <li class="nav__item">
-              <a href="/#skills" class="nav__link">Skills</a>
-            </li>
-            <li class="nav__item">
-              <a href="/#portfolio" class="nav__link active">Portfolio</a>
-            </li>
-            <li class="nav__item">
-              <a href="/#experience" class="nav__link">Experience</a>
-            </li>
-            <li class="nav__item">
-              <a href="/#contact" class="nav__link">Contact</a>
-            </li>
-          </ul>
-          
-          <div class="nav__close" id="nav-close">
-            <span>&times;</span>
-          </div>
-        </div>
-        
-        <div class="nav__social">
-          <a href="https://github.com/JoshPattani" target="_blank" rel="noopener" class="nav__social-link" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/josh-pattani/" target="_blank" rel="noopener" class="nav__social-link" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
-        </div>
-        
-        <div class="nav__toggle" id="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-    </header>
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="RESI | Josh Pattani" />
+  <meta
+   property="og:description"
+   content="An interactive installation exploring digital representations of human social dynamics."
+  />
+  <meta property="og:type" content="website" />
 
-    <main class="main">
-      <!-- Scrolling Photo Gallery (Left Margin) -->
-      <div class="project-gallery-scroll" id="gallery-scroll">
-        <div class="project-gallery-scroll__track">
-          <div class="project-gallery-scroll__item active" data-scroll-start="0" data-scroll-end="800">
-            <img src="/assets/img/resi-photo-1.jpg" alt="RESI Project Photo 1" />
-          </div>
-          <div class="project-gallery-scroll__item" data-scroll-start="800" data-scroll-end="1100">
-            <img src="/assets/img/resi-photo-2.jpg" alt="RESI Project Photo 2" />
-          </div>
-          <div class="project-gallery-scroll__item" data-scroll-start="1100" data-scroll-end="1400">
-            <img src="/assets/img/resi-photo-3.jpg" alt="RESI Project Photo 3" />
-          </div>
-          <div class="project-gallery-scroll__item" data-scroll-start="1400" data-scroll-end="1700">
-            <img src="/assets/img/resi-photo-4.jpg" alt="RESI Project Photo 4" />
-          </div>
-          <div class="project-gallery-scroll__item" data-scroll-start="1700" data-scroll-end="2100">
-            <img src="/assets/img/resi-photo-5.jpg" alt="RESI Project Photo 5" />
-          </div>
-        </div>
-      </div>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+   rel="stylesheet"
+  />
 
-      <!-- Project Hero -->
-      <section class="project-hero">
-        <div class="project-hero__container container">
-          <a href="/#portfolio" class="project-hero__back">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            <span>Back to Portfolio</span>
-          </a>
-          
-          <div class="project-hero__content">
-            <span class="project-hero__category">Capstone Project • 2025</span>
-            <h1 class="project-hero__title">RESI: Rendered Embodiment of Social Interactions</h1>
-            <p class="project-hero__description">
-              An interactive installation exploring digital representations of human social dynamics 
-              through creative technology and embodied design. This capstone project represents the 
-              culmination of my studies in CU Boulder's Creative Technology & Design program.
-            </p>
-            
-            <div class="project-hero__meta">
-              <div class="project-hero__meta-item">
-                <span class="project-hero__meta-label">Role</span>
-                <span class="project-hero__meta-value">Designer & Backend Developer</span>
-              </div>
-              <div class="project-hero__meta-item">
-                <span class="project-hero__meta-label">Timeline</span>
-                <span class="project-hero__meta-value">Fall 2024 -> Spring 2025</span>
-              </div>
-              <div class="project-hero__meta-item">
-                <span class="project-hero__meta-label">Tools</span>
-                <span class="project-hero__meta-value">Creative Coding, Fabrication</span>
-              </div>
-            </div>
-            
-            <div class="project-hero__actions">
-              <a href="https://www.resiforevery.one/" target="_blank" rel="noopener" class="btn btn--primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                <span>Visit Project Website</span>
-              </a>
-              <a href="https://github.com/JoshPattani/ReSi_Rendered-Embodiment-of-Social-Interactions" target="_blank" rel="noopener" class="btn btn--outline">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                <span>View Source Code</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+  <link rel="stylesheet" href="/CSS/index.css" />
+  <link rel="stylesheet" href="/CSS/project.css" />
+  <title>RESI: Rendered Embodiment of Social Interactions | Josh Pattani</title>
+ </head>
 
-      <!-- Video Showcase -->
-      <section class="project-video section">
-        <div class="project-video__container container">
-          <div class="project-video__wrapper">
-            <iframe 
-              src="https://www.youtube.com/embed/7UjH5D150E8" 
-              title="ReSi: Rendered Embodiment of Social Interactions"
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" 
-              allowfullscreen>
-            </iframe>
-          </div>
-        </div>
-      </section>
+ <body>
+  <!-- Cursor follower for desktop -->
+  <div class="cursor-follower"></div>
 
-      <!-- Project Overview -->
-      <section class="project-content section">
-        <div class="project-content__container container">
-          
-          <div class="project-section">
-            <h2 class="project-section__title">About the Project</h2>
-            <div class="project-section__content">
-              <p>
-                RESI (Rendered Embodiment of Social Interactions) is an interactive installation 
-                that explores how we can visualize and embody social dynamics through digital media. 
-                The project investigates the intersection of physical presence and digital representation, 
-                creating a space where participants can see their social interactions rendered in real-time.
-              </p>
-              <p>
-                This project was developed as part of my senior capstone at CU Boulder's Creative 
-                Technology & Design program, representing the culmination of four years of study 
-                in design thinking, creative coding, and physical fabrication.
-              </p>
-            </div>
-          </div>
-
-          <!-- Technologies -->
-          <div class="project-section">
-            <h2 class="project-section__title">Technologies & Tools</h2>
-            <div class="project-tech-grid">
-              <div class="project-tech-item">Creative Coding</div>
-              <div class="project-tech-item">Physical Computing</div>
-              <div class="project-tech-item">Arduino</div>
-              <div class="project-tech-item">Sensors</div>
-              <div class="project-tech-item">Fabrication</div>
-              <div class="project-tech-item">3D Modeling</div>
-              <div class="project-tech-item">Interactive Design</div>
-              <div class="project-tech-item">Projection</div>
-              <div class="project-tech-item">Real-time Data Visualization</div>
-              <div class="project-tech-item">MAX/MSP</div>
-              <div class="project-tech-item">Ableton Live</div>
-            </div>
-          </div>
-
-          <!-- CTA to main website -->
-          <div class="project-section project-section--cta">
-            <div class="project-cta">
-              <h2 class="project-cta__title">Want to learn more?</h2>
-              <p class="project-cta__text">
-                Visit the official ReSi project website for the full story, documentation, 
-                and behind-the-scenes content.
-              </p>
-              <a href="https://www.resiforevery.one/" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
-                <span>Explore resiforevery.one</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer__container container">
-        <div class="footer__content">
-          <div class="footer__brand">
-            <img src="/img/webpage/JP_logoH.png" alt="Josh Pattani Logo" class="footer__logo" />
-            <p class="footer__tagline">Designer • Developer • Maker • Engineer</p>
-          </div>
-          
-          <div class="footer__links">
-            <a href="/" class="footer__link">Home</a>
-            <a href="/#about" class="footer__link">About</a>
-            <a href="/#portfolio" class="footer__link">Portfolio</a>
-            <a href="/#contact" class="footer__link">Contact</a>
-          </div>
-        </div>
-        
-        <div class="footer__bottom">
-          <p class="footer__copyright">
-            &copy; 2025 Josh Pattani. Designed & Built with ☕ in Denver, CO
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Back to top button -->
-    <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  <!-- Navigation -->
+  <header class="header" id="header">
+   <nav class="nav container">
+    <a href="/" class="nav__logo">
+     <img
+      src="/img/webpage/JP_logo.png"
+      alt="Josh Pattani Logo"
+      class="nav__logo-img"
+     />
     </a>
 
-    <script src="/JS/analytics-config.js"></script>
-    <script src="/JS/analytics.js"></script>
-    <script src="/JS/portfolio.js"></script>
-    <script src="/JS/project-gallery-scroll.js"></script>
-  </body>
+    <div class="nav__menu" id="nav-menu">
+     <ul class="nav__list">
+      <li class="nav__item">
+       <a href="/" class="nav__link">Home</a>
+      </li>
+      <li class="nav__item">
+       <a href="/#about" class="nav__link">About</a>
+      </li>
+      <li class="nav__item">
+       <a href="/#skills" class="nav__link">Skills</a>
+      </li>
+      <li class="nav__item">
+       <a href="/#portfolio" class="nav__link active">Portfolio</a>
+      </li>
+      <li class="nav__item">
+       <a href="/#experience" class="nav__link">Experience</a>
+      </li>
+      <li class="nav__item">
+       <a href="/#contact" class="nav__link">Contact</a>
+      </li>
+     </ul>
+
+     <div class="nav__close" id="nav-close">
+      <span>&times;</span>
+     </div>
+    </div>
+
+    <div class="nav__social">
+     <a
+      href="https://github.com/JoshPattani"
+      target="_blank"
+      rel="noopener"
+      class="nav__social-link"
+      aria-label="GitHub"
+     >
+      <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="currentColor"
+      >
+       <path
+        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+       />
+      </svg>
+     </a>
+     <a
+      href="https://www.linkedin.com/in/josh-pattani/"
+      target="_blank"
+      rel="noopener"
+      class="nav__social-link"
+      aria-label="LinkedIn"
+     >
+      <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="24"
+       height="24"
+       viewBox="0 0 24 24"
+       fill="currentColor"
+      >
+       <path
+        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+       />
+      </svg>
+     </a>
+    </div>
+
+    <div class="nav__toggle" id="nav-toggle">
+     <span></span>
+     <span></span>
+     <span></span>
+    </div>
+   </nav>
+  </header>
+
+  <main class="main">
+   <!-- Scrolling Photo Gallery (Left Margin) -->
+   <div class="project-gallery-scroll" id="gallery-scroll">
+    <div class="project-gallery-scroll__track">
+     <div
+      class="project-gallery-scroll__item active"
+      data-scroll-start="0"
+      data-scroll-end="800"
+     >
+      <img src="/assets/img/resi-photo-1.jpg" alt="RESI Project Photo 1" />
+     </div>
+     <div
+      class="project-gallery-scroll__item"
+      data-scroll-start="800"
+      data-scroll-end="1100"
+     >
+      <img src="/assets/img/resi-photo-2.jpg" alt="RESI Project Photo 2" />
+     </div>
+     <div
+      class="project-gallery-scroll__item"
+      data-scroll-start="1100"
+      data-scroll-end="1400"
+     >
+      <img src="/assets/img/resi-photo-3.jpg" alt="RESI Project Photo 3" />
+     </div>
+     <div
+      class="project-gallery-scroll__item"
+      data-scroll-start="1400"
+      data-scroll-end="1700"
+     >
+      <img src="/assets/img/resi-photo-4.jpg" alt="RESI Project Photo 4" />
+     </div>
+     <div
+      class="project-gallery-scroll__item"
+      data-scroll-start="1700"
+      data-scroll-end="2100"
+     >
+      <img src="/assets/img/resi-photo-5.jpg" alt="RESI Project Photo 5" />
+     </div>
+    </div>
+   </div>
+
+   <!-- Project Hero -->
+   <section class="project-hero">
+    <div class="project-hero__container container">
+     <a href="/#portfolio" class="project-hero__back">
+      <svg
+       xmlns="http://www.w3.org/2000/svg"
+       width="20"
+       height="20"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+      >
+       <line x1="19" y1="12" x2="5" y2="12"></line>
+       <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Back to Portfolio</span>
+     </a>
+
+     <div class="project-hero__content">
+      <span class="project-hero__category">Capstone Project • 2025</span>
+      <h1 class="project-hero__title">
+       RESI: Rendered Embodiment of Social Interactions
+      </h1>
+      <p class="project-hero__description">
+       A participant-driven interactive installation that uses biometric and
+       biosignal data, sensors, real-time audiovisual systems, and physical
+       space to explore how social interaction can be rendered as an immersive
+       experience.
+      </p>
+
+      <div class="project-hero__meta">
+       <div class="project-hero__meta-item">
+        <span class="project-hero__meta-label">Role</span>
+        <span class="project-hero__meta-value"
+         >Designer, Backend Developer & System Integrator</span
+        >
+       </div>
+       <div class="project-hero__meta-item">
+        <span class="project-hero__meta-label">Timeline</span>
+        <span class="project-hero__meta-value">Fall 2024 -> Spring 2025</span>
+       </div>
+       <div class="project-hero__meta-item">
+        <span class="project-hero__meta-label">Tools</span>
+        <span class="project-hero__meta-value"
+         >Sensors, Real-time AV, Creative Coding, Fabrication</span
+        >
+       </div>
+      </div>
+
+      <div class="project-hero__actions">
+       <a
+        href="https://www.resiforevery.one/"
+        target="_blank"
+        rel="noopener"
+        class="btn btn--primary"
+       >
+        <svg
+         xmlns="http://www.w3.org/2000/svg"
+         width="20"
+         height="20"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+        >
+         <circle cx="12" cy="12" r="10"></circle>
+         <line x1="2" y1="12" x2="22" y2="12"></line>
+         <path
+          d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+         ></path>
+        </svg>
+        <span>Visit Project Website</span>
+       </a>
+       <a
+        href="https://github.com/JoshPattani/ReSi_Rendered-Embodiment-of-Social-Interactions"
+        target="_blank"
+        rel="noopener"
+        class="btn btn--outline"
+       >
+        <svg
+         xmlns="http://www.w3.org/2000/svg"
+         width="20"
+         height="20"
+         viewBox="0 0 24 24"
+         fill="currentColor"
+        >
+         <path
+          d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+         />
+        </svg>
+        <span>View Source Code</span>
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <!-- Video Showcase -->
+   <section class="project-video section">
+    <div class="project-video__container container">
+     <div class="project-video__wrapper">
+      <iframe
+       src="https://www.youtube.com/embed/7UjH5D150E8"
+       title="ReSi: Rendered Embodiment of Social Interactions"
+       frameborder="0"
+       allow="
+        accelerometer;
+        autoplay;
+        clipboard-write;
+        encrypted-media;
+        gyroscope;
+        picture-in-picture;
+        web-share;
+       "
+       referrerpolicy="strict-origin-when-cross-origin"
+       allowfullscreen
+      >
+      </iframe>
+     </div>
+    </div>
+   </section>
+
+   <!-- Project Overview -->
+   <section class="project-content section">
+    <div class="project-content__container container">
+     <div class="project-section">
+      <h2 class="project-section__title">About the Project</h2>
+      <div class="project-section__content">
+       <p>
+        RESI (Rendered Embodiment of Social Interactions) is an interactive
+        installation that explores how biometric and biosignal data can shape a
+        shared audiovisual environment. Participants become part of the system:
+        their presence and measured signals inform a real-time media experience
+        that makes social connection visible.
+       </p>
+       <p>
+        The project combines creative coding, sensor-driven input, technical
+        prototyping, physical fabrication, and system integration. It reflects
+        the kind of work I am most interested in: building physical-digital
+        experiences that have to function as both designed spaces and reliable
+        technical systems.
+       </p>
+       <p>
+        Developed as my senior capstone at CU Boulder's Creative Technology &
+        Design program, RESI became an anchor project for learning how to move
+        between concept, fabrication, interaction design, audiovisual behavior,
+        and documentation.
+       </p>
+      </div>
+     </div>
+
+     <!-- Technologies -->
+     <div class="project-section">
+      <h2 class="project-section__title">Technologies & Tools</h2>
+      <div class="project-tech-grid">
+       <div class="project-tech-item">Biometric Data</div>
+       <div class="project-tech-item">Biosignals</div>
+       <div class="project-tech-item">Sensors</div>
+       <div class="project-tech-item">Physical Computing</div>
+       <div class="project-tech-item">Real-time Audiovisual Systems</div>
+       <div class="project-tech-item">Participant-driven Interaction</div>
+       <div class="project-tech-item">System Integration</div>
+       <div class="project-tech-item">Technical Prototyping</div>
+       <div class="project-tech-item">Interactive Installation Design</div>
+       <div class="project-tech-item">Fabrication</div>
+       <div class="project-tech-item">Projection</div>
+       <div class="project-tech-item">MAX/MSP</div>
+       <div class="project-tech-item">Ableton Live</div>
+      </div>
+     </div>
+
+     <!-- Role relevance -->
+     <div class="project-section">
+      <h2 class="project-section__title">Why This Matters</h2>
+      <div class="project-goals">
+       <div class="project-goal">
+        <h3 class="project-goal__title">Installed System Thinking</h3>
+        <p class="project-goal__text">
+         RESI required thinking beyond the screen: participant flow, physical
+         setup, sensor behavior, audiovisual output, and how the system would
+         hold together during repeated use.
+        </p>
+       </div>
+       <div class="project-goal">
+        <h3 class="project-goal__title">Sensor + Media Integration</h3>
+        <p class="project-goal__text">
+         The project connects measured human input to real-time visual and audio
+         responses, which maps directly to interactive exhibit and experiential
+         technology work.
+        </p>
+       </div>
+       <div class="project-goal">
+        <h3 class="project-goal__title">Participant-driven Experience</h3>
+        <p class="project-goal__text">
+         The interaction depends on people entering the space, affecting the
+         system, and understanding the feedback without needing a technical
+         explanation.
+        </p>
+       </div>
+       <div class="project-goal">
+        <h3 class="project-goal__title">Prototype to Documentation</h3>
+        <p class="project-goal__text">
+         Building the work meant testing, troubleshooting, documenting, and
+         translating a concept into a system other people could inspect, use,
+         and maintain.
+        </p>
+       </div>
+      </div>
+     </div>
+     <!-- CTA to main website -->
+     <div class="project-section project-section--cta">
+      <div class="project-cta">
+       <h2 class="project-cta__title">Want to learn more?</h2>
+       <p class="project-cta__text">
+        Visit the official ReSi project website for the full story,
+        documentation, and behind-the-scenes content.
+       </p>
+       <a
+        href="https://www.resiforevery.one/"
+        target="_blank"
+        rel="noopener"
+        class="btn btn--primary btn--lg"
+       >
+        <span>Explore resiforevery.one</span>
+        <svg
+         xmlns="http://www.w3.org/2000/svg"
+         width="20"
+         height="20"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+        >
+         <line x1="7" y1="17" x2="17" y2="7"></line>
+         <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+   <div class="footer__container container">
+    <div class="footer__content">
+     <div class="footer__brand">
+      <img
+       src="/img/webpage/JP_logoH.png"
+       alt="Josh Pattani Logo"
+       class="footer__logo"
+      />
+      <p class="footer__tagline">Designer • Developer • Maker • Engineer</p>
+     </div>
+
+     <div class="footer__links">
+      <a href="/" class="footer__link">Home</a>
+      <a href="/#about" class="footer__link">About</a>
+      <a href="/#portfolio" class="footer__link">Portfolio</a>
+      <a href="/#contact" class="footer__link">Contact</a>
+     </div>
+    </div>
+
+    <div class="footer__bottom">
+     <p class="footer__copyright">
+      &copy; 2026 Josh Pattani. Designed & Built with ☕ in Denver, CO
+     </p>
+    </div>
+   </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
+   <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+   >
+    <polyline points="18 15 12 9 6 15"></polyline>
+   </svg>
+  </a>
+
+  <script src="/JS/analytics-config.js"></script>
+  <script src="/JS/analytics.js"></script>
+  <script src="/JS/portfolio.js"></script>
+  <script src="/JS/project-gallery-scroll.js"></script>
+ </body>
 </html>

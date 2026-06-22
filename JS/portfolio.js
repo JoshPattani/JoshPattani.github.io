@@ -305,6 +305,39 @@ function handleParallax() {
 
 window.addEventListener('scroll', handleParallax);
 
+
+// ===== DYNAMIC DURATION STATS =====
+function getElapsedCalendarMonths(startDate, currentDate = new Date()) {
+  return Math.max(
+    0,
+    (currentDate.getFullYear() - startDate.getFullYear()) * 12 +
+      (currentDate.getMonth() - startDate.getMonth())
+  );
+}
+
+function updateDurationStats() {
+  const durationStats = document.querySelectorAll('[data-duration-start]');
+
+  durationStats.forEach(stat => {
+    const [year, month, day = 1] = stat.dataset.durationStart
+      .split('-')
+      .map(Number);
+
+    if (!year || !month) return;
+
+    const startDate = new Date(year, month - 1, day);
+    const months = getElapsedCalendarMonths(startDate);
+    const value = stat.querySelector('[data-duration-value]');
+    const label = stat.querySelector('[data-duration-label]');
+
+    if (value) value.textContent = `${months}+`;
+    if (label) {
+      label.textContent = months === 1
+        ? 'Month in Design Career'
+        : 'Months in Design Career';
+    }
+  });
+}
 // ===== LOAD ANIMATIONS =====
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
@@ -314,6 +347,7 @@ window.addEventListener('load', () => {
     handleHeaderScroll();
     highlightActiveSection();
     handleBackToTop();
+    updateDurationStats();
     revealOnScroll();
   }, 100);
 });
