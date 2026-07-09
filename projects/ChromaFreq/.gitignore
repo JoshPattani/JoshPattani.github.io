@@ -1,0 +1,2 @@
+# Preserve the legacy code archive, but do not accidentally commit copied music assets.
+v1/assets/

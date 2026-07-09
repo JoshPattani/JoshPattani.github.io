@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ChromaFreq V2 | Experimental Listening Instrument</title>
+    <meta
+      name="description"
+      content="ChromaFreq translates audio frequency analysis into visible color using Web Audio, wavelength mapping, and real-time canvas rendering."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="masthead" aria-labelledby="page-title">
+        <a class="back-link" href="../../">Portfolio</a>
+        <div>
+          <p class="eyebrow">Synesthetic spectrum lab</p>
+          <h1 id="page-title">ChromaFreq</h1>
+        </div>
+        <p class="masthead-copy">
+          ChromaFreq is an experimental listening instrument that translates
+          sound into visible color, using real-time frequency analysis and
+          wavelength mapping to explore the space between music, perception, and
+          light.
+        </p>
+      </header>
+
+      <section class="instrument-layout" aria-label="ChromaFreq instrument">
+        <section class="stage-panel" aria-label="Visualization stage">
+          <canvas id="chroma-canvas" aria-label="Real-time color frequency visualization"></canvas>
+          <div class="stage-overlay" aria-hidden="true">
+            <span>Audio</span>
+            <span>Frequency</span>
+            <span>Wavelength</span>
+            <span>Color</span>
+          </div>
+        </section>
+
+        <aside id="control-panel" class="control-panel" aria-label="Player and source controls">
+          <section class="panel-section">
+            <div class="section-heading">
+              <p class="eyebrow">Source</p>
+              <h2>Input path</h2>
+            </div>
+
+            <div id="source-selector" class="source-selector" role="group" aria-label="Source selector">
+              <button type="button" data-source="demo" aria-pressed="true">Demo</button>
+              <button type="button" data-source="local" aria-pressed="false">Local File</button>
+              <button type="button" data-source="live" aria-pressed="false">Live Input</button>
+              <button type="button" data-source="spotify" aria-pressed="false">Spotify</button>
+            </div>
+
+            <div class="source-panels">
+              <div data-source-panel="demo">
+                <p>
+                  Generated oscillator tones provide a rights-safe demo source
+                  for testing the color engine.
+                </p>
+              </div>
+
+              <div data-source-panel="local" hidden>
+                <div
+                  class="dropzone"
+                  data-dropzone
+                  role="button"
+                  tabindex="0"
+                  aria-label="Choose or drop a local audio file"
+                >
+                  <strong>Choose an audio file</strong>
+                  <span>WAV, MP3, M4A, OGG, FLAC where the browser supports decoding.</span>
+                  <input data-file-input type="file" accept="audio/*" />
+                </div>
+              </div>
+
+              <div data-source-panel="live" hidden>
+                <p>
+                  Live Input analyzes ambient or performed sound from the
+                  microphone after permission is granted. Monitoring is muted to
+                  avoid feedback.
+                </p>
+              </div>
+
+              <div data-source-panel="spotify" hidden>
+                <p>
+                  Spotify Companion is contextual only: metadata, album art, and
+                  links can be added later. ChromaFreq does not rip, record,
+                  bypass DRM, or analyze Spotify audio streams.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel-section">
+            <div class="section-heading">
+              <p class="eyebrow">Transport</p>
+              <h2>Playback</h2>
+            </div>
+
+            <div class="track-strip" aria-live="polite">
+              <strong data-track-title>No source selected</strong>
+              <span data-track-meta>Choose a source to begin.</span>
+            </div>
+
+            <div class="transport-controls">
+              <button type="button" class="primary" data-action="play">Play</button>
+              <button type="button" data-action="pause" disabled>Pause</button>
+              <button type="button" data-action="stop" disabled>Stop</button>
+            </div>
+
+            <label class="range-control">
+              <span>Volume</span>
+              <input data-control="volume" type="range" min="0" max="1" value="0.82" step="0.01" />
+            </label>
+
+            <p class="status-line" data-player-status aria-live="polite">Ready.</p>
+          </section>
+        </aside>
+
+        <aside id="analysis-panel" class="analysis-panel" aria-label="Analysis readout">
+          <section class="panel-section">
+            <div class="section-heading">
+              <p class="eyebrow">Analysis</p>
+              <h2>Signal to color</h2>
+            </div>
+
+            <dl class="readout-grid">
+              <div>
+                <dt>Dominant frequency</dt>
+                <dd data-readout="frequency">0 Hz</dd>
+              </div>
+              <div>
+                <dt>Spectral centroid</dt>
+                <dd data-readout="centroid">0 Hz</dd>
+              </div>
+              <div>
+                <dt>Mapped wavelength</dt>
+                <dd data-readout="wavelength">0 nm</dd>
+              </div>
+              <div>
+                <dt>Color</dt>
+                <dd data-readout="color">#000000</dd>
+              </div>
+              <div>
+                <dt>RGB</dt>
+                <dd data-readout="rgb">rgb(0, 0, 0)</dd>
+              </div>
+              <div>
+                <dt>Amplitude</dt>
+                <dd data-readout="amplitude">0%</dd>
+              </div>
+              <div class="wide">
+                <dt>Mapping mode</dt>
+                <dd data-readout="mapping">Perceptual Log Mapping</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="panel-section">
+            <div class="section-heading">
+              <p class="eyebrow">Settings</p>
+              <h2>Mapping</h2>
+            </div>
+
+            <label class="select-control" for="mapping-mode">
+              <span>Color logic</span>
+              <select id="mapping-mode" data-control="mapping-mode"></select>
+            </label>
+
+            <label class="range-control">
+              <span>Smoothing</span>
+              <input data-control="smoothing" type="range" min="0" max="0.95" value="0.84" step="0.01" />
+            </label>
+
+            <label class="range-control">
+              <span>Sensitivity</span>
+              <input data-control="sensitivity" type="range" min="0.35" max="2.5" value="1" step="0.01" />
+            </label>
+
+            <label class="select-control">
+              <span>FFT size</span>
+              <select data-control="fft-size">
+                <option value="1024">1024</option>
+                <option value="2048" selected>2048</option>
+                <option value="4096">4096</option>
+                <option value="8192">8192</option>
+              </select>
+            </label>
+          </section>
+        </aside>
+      </section>
+
+      <section class="project-notes" aria-labelledby="about-title">
+        <div>
+          <p class="eyebrow">Project note</p>
+          <h2 id="about-title">Sound as visible structure</h2>
+        </div>
+        <p>
+          V2 keeps the original ATLAS color-study idea intact while replacing
+          the prototype playback stack with a clearer Web Audio architecture.
+          The engine analyzes local files, generated test tones, or live input,
+          then maps frequency information into visible-light wavelengths and RGB
+          values. Spotify is reserved for context only and is never treated as a
+          raw audio source.
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
+

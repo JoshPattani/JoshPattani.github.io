@@ -1,0 +1,824 @@
+/* PAGE STYLES */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  background-color: #2c3e50;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/* Article Container Class */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100vw;
+}
+
+/* Button Container Class */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px 0;
+  width: 100vw;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* Center Text Div Class */
+.centered-text {
+  text-align: center;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.centered-text h1 {
+  margin-bottom: 5px;
+  margin-top: 20px;
+  font-size: 2.5em;
+}
+
+.centered-text p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 0.8em;
+}
+
+/* Canvas and Menu Container */
+#sketch-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 80%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Canvas Container for JS script */
+#canvas-container {
+  flex: auto;
+  width: 256px;
+  height: 256px;
+  margin: 0 auto;
+}
+
+#album-cover {
+  width: 256px;
+  height: 256px;
+  margin: 0 auto;
+}
+
+/* JS Canvas Object */
+#canvas {
+  width: 256px;
+  height: 256px;
+  margin: 0 auto;
+  flex: auto;
+}
+
+/* DROPDOWN MENU BASIC CSS */
+
+.row {
+  flex: content;
+  min-width: 50%;
+  max-width: 60%;
+  margin: 0;
+}
+
+/* .col {
+  max-width: 90%;
+} */
+
+.row .col {
+  padding: 0 15px;
+  min-width: 80%;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.row .col .dropdown-container {
+  flex: 0 0 25%;
+  min-width: 256px;
+  max-width: 320px;
+  padding: 10px;
+  margin: 5px auto;
+  transition: all ease-in-out 0.2s;
+}
+
+/* DROPDOWN MENU STYLES */
+
+/* Menu Container */
+.dropdown-container {
+  max-width: 70%;
+  margin: 0;
+  padding-right: 0;
+}
+
+/* Menu Box Text */
+.dropdown-container .dropdown-toggle p {
+  margin: 0;
+  min-width: 80%;
+  max-width: none;
+}
+
+p#menu-text {
+  margin: 5% 0;
+  text-align: left;
+  font-size: 0.7em;
+}
+
+p#album-name {
+  margin: 5% 0;
+  text-align: left;
+  font-size: 0.5em;
+}
+
+/* Toggle Button Container */
+.dropdown-toggle {
+  display: inline-flex;
+  min-width: 100%;
+}
+
+/* Main Gradient Styling and Transformations */
+.dropdown-container .dropdown-toggle {
+  color: #000000;
+  background-color: #ffffff;
+  font-size: 18pt;
+  padding: 18px 20px;
+  box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+}
+
+.dropdown-container .dropdown-toggle label {
+  cursor: pointer;
+  width: 100%;
+}
+
+.dropdown-container .dropdown-toggle:hover,
+.dropdown-container .dropdown-toggle:active,
+.dropdown-container .dropdown-toggle:focus {
+  background-color: #0979ce;
+  color: #ffffff;
+}
+
+.dropdown-container .dropdown-menu {
+  min-width: fit-content;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.5);
+  margin-top: 17px;
+  top: 100%;
+  display: none;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+/* Menu Item Styles */
+select {
+  color: #000000; /* Text color */
+  background-color: #ffffff; /* Background color */
+  font-size: 24pt; /* Font size */
+  padding: 18px 20px; /* Padding */
+  border-radius: 10px; /* Rounded corners */
+  font-weight: 600; /* Font weight */
+  box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.5); /* Box shadow */
+  width: 100%; /* Full width */
+  margin: 5px auto; /* Margin */
+  cursor: pointer; /* Cursor style */
+  transition: all ease-in-out 0.3s; /* Transition for interaction */
+}
+
+select option {
+  color: #000000; /* Text color */
+  padding: 16px 20px; /* Padding */
+  font-weight: 600; /* Font weight */
+  font-size: 0.65em; /* Font size */
+}
+
+select:hover,
+select:focus {
+  background-color: #0979ce; /* Background color on hover/focus */
+  color: #ffffff; /* Text color on hover/focus */
+}
+
+select option:disabled {
+  color: #d3d3d3; /* Disabled text color */
+}
+
+.dropdown-container .dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.dropdown-container .dropdown-menu li {
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  color: #000000;
+  font-size: 0.65em;
+  padding: 16px 20px;
+  font-weight: 600;
+  box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.5);
+  transition: all ease-in-out 0.3s;
+}
+
+.dropdown-container .dropdown-menu ul li:hover,
+.dropdown-container .dropdown-menu ul li:active,
+.dropdown-container .dropdown-menu ul li:focus {
+  background-color: #0979ce;
+  color: #ffffff;
+}
+
+.dropdown-menu,
+.dropdown-toggle {
+  position: relative;
+}
+
+.dropdown-menu::before,
+.dropdown-toggle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 85%;
+  transform: translateY(-50%) rotate(45deg);
+  border: 5px solid;
+  border-top-color: rgba(0, 0, 0, 0);
+  border-left-color: rgba(0, 0, 0, 0);
+  margin-top: -2.5px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: all ease-in-out 0.2s;
+}
+
+.dropdown-container.dropdown-open .dropdown-toggle::before {
+  transform: translateY(-50%) rotate(-135deg);
+  border-bottom-color: transparent !important;
+  border-right-color: transparent !important;
+  border-top-color: #ffffff !important;
+  border-left-color: #ffffff !important;
+  transition: all ease-in-out 0.2s;
+}
+
+.dropdown-menu {
+  z-index: 10;
+  position: relative;
+}
+
+.dropdown-menu::before {
+  z-index: -1;
+  transform: rotate(-135deg);
+  top: -4px;
+  border-color: #ffffff;
+  box-shadow: 1px 1px 4px -2px rgba(0, 0, 0, 0.4);
+}
+
+/* Dropdown Hover & Active State Styles */
+
+.dropdown-open .dropdown-menu.dropdown-active {
+  display: block;
+}
+
+.dropdown-container.dropdown-open .dropdown-toggle {
+  background-color: #0979ce;
+  color: #ffffff;
+}
+
+.dropdown-gradient .dropdown-toggle,
+.dropdown-gradient .dropdown-menu,
+.dropdown-gradient ul li {
+  background: #ff3131;
+  background: -moz-linear-gradient(262deg, #ff3131 11%, #5400ff 100%);
+  background: -webkit-linear-gradient(262deg, #ff3131 11%, #5400ff 100%);
+  background: linear-gradient(262deg, #ff3131 11%, #5400ff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff3131",endColorstr="#5400ff",GradientType=1);
+  color: #ffffff;
+}
+
+.dropdown-gradient .dropdown-toggle::before {
+  color: #ffffff;
+}
+
+.dropdown-gradient .dropdown-menu ul li {
+  background: none;
+  box-shadow: none;
+  color: #ffffff;
+}
+
+.dropdown-gradient .dropdown-menu ul li:hover,
+.dropdown-gradient .dropdown-menu ul li:active,
+.dropdown-gradient .dropdown-menu ul li:focus {
+  background: #ff3131;
+  background: -moz-linear-gradient(66deg, #ff3131 11%, #5400ff 100%);
+  background: -webkit-linear-gradient(66deg, #ff3131 11%, #5400ff 100%);
+  background: linear-gradient(66deg, #ff3131 11%, #5400ff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff3131",endColorstr="#5400ff",GradientType=1);
+}
+
+.dropdown-gradient .dropdown-menu::before {
+  box-shadow: none;
+  border-color: #ff3131;
+}
+
+/* P5 canvas seamless styling */
+#p5_loading {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  min-width: 40%;
+  max-width: 60%;
+}
+
+/* INTERACTIVE GUI STYLES */
+.gui-controls {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  min-width: 85%;
+  max-width: none;
+}
+
+/* button styles */
+.gui-controls div button {
+  border-radius: 5px;
+  background: #ff3131;
+  background: -moz-linear-gradient(262deg, #ff3131 11%, #5400ff 100%);
+  background: -webkit-linear-gradient(262deg, #ff3131 11%, #5400ff 100%);
+  background: linear-gradient(262deg, #ff3131 11%, #5400ff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff3131",endColorstr="#5400ff",GradientType=1);
+  color: #ffffff;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  position: inherit;
+}
+
+.gui-controls div button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+}
+
+.gui-controls div button:hover {
+  opacity: 1;
+}
+
+.gui-controls div button:active {
+  background-color: #0979ce;
+  color: #ffffff;
+}
+
+.gui-controls div button:focus {
+  background-color: #0979ce;
+  color: #ffffff;
+}
+
+.gui-controls div button:disabled {
+  background-color: #d3d3d3;
+  color: #ffffff;
+}
+
+/* slider container */
+
+#slider-container.gui-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  min-width: 85%;
+  max-width: none;
+}
+
+#slider-container.gui-controls p {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 0.6em;
+}
+
+/* volume slider */
+#volume-slider {
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  position: inherit;
+  min-width: 35%;
+  max-width: none;
+}
+
+#volume-slider:hover {
+  opacity: 1;
+}
+
+#volume-slider:active {
+  background-color: #0979ce;
+  color: #ffffff;
+}
+
+#volume-slider:focus {
+  background-color: #0979ce;
+  color: #ffffff;
+}
+
+#volume-slider:disabled {
+  background-color: #d3d3d3;
+  color: #ffffff;
+}
+
+/* P5 STYLES */
+#p5_loading {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  min-width: 40%;
+  max-width: 60%;
+}
+
+/* Responsive Design Media Queries */
+
+/* Larger Mobile Devices */
+@media (min-width: 424px) {
+  .content-container {
+    width: 90vw;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .centered-text {
+    min-width: 80%;
+    max-width: none;
+  }
+
+  .centered-text h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  .centered-text p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  #sketch-container {
+    min-width: 85%;
+    max-width: none;
+  }
+
+  #canvas-container {
+    flex: auto;
+    min-width: 100%;
+    max-height: 512px;
+    margin: 0;
+  }
+
+  #canvas {
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+  }
+
+  .row {
+    min-width: 100%;
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .row .col {
+    min-width: 80%;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .row .col .dropdown-container {
+    flex: 0 0 25%;
+    min-width: 320px;
+    max-width: 512px;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  .dropdown-container .dropdown-toggle {
+    padding: 10px 20px;
+  }
+
+  .dropdown-menu::before,
+  .dropdown-toggle::before {
+    top: 50%;
+    left: 89%;
+  }
+
+  #menu-text {
+    min-width: 80%;
+    max-width: none;
+  }
+
+  p#menu-text {
+    margin: 10% 0;
+    margin-right: 10%;
+    text-align: left;
+    font-size: 0.75em;
+  }
+
+  p#album-name {
+    margin: 10% 0;
+    text-align: left;
+    font-size: 0.75em;
+  }
+
+  p#track-name {
+    margin: 10% 0;
+    text-align: left;
+    font-size: 0.75em;
+  }
+
+  .dropdown-container .dropdown-menu li {
+    font-size: 0.75em;
+  }
+
+  select {
+    font-size: 0.8em;
+  }
+}
+
+/* Tablets */
+@media (min-width: 767px) {
+  .content-container {
+    width: 90vw;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .buttons {
+    width: 90vw;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .centered-text {
+    min-width: 80%;
+    max-width: none;
+  }
+
+  .centered-text h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  .centered-text p {
+    font-size: 0.85em;
+    margin-bottom: 15px;
+    margin-top: 0;
+  }
+
+  #sketch-container {
+    min-width: 85%;
+    max-width: none;
+  }
+
+  #canvas-container {
+    flex: auto;
+    min-width: 100%;
+    max-height: 512px;
+    margin: 0;
+  }
+
+  #canvas {
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+  }
+
+  .row {
+    min-width: 100%;
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .row .col {
+    min-width: 80%;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .row .col .dropdown-container {
+    flex: 0 0 25%;
+    min-width: 320px;
+    max-width: 512px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+
+  .dropdown-container .dropdown-toggle {
+    padding: 10px 20px;
+  }
+
+  .dropdown-menu::before,
+  .dropdown-toggle::before {
+    top: 50%;
+    left: 88%;
+  }
+
+  #menu-text {
+    min-width: 80%;
+    max-width: none;
+  }
+
+  p#menu-text {
+    margin: 5% 0;
+    text-align: left;
+    font-size: 0.8em;
+  }
+
+  p#album-name {
+    margin: 5% 0;
+    text-align: left;
+    font-size: 0.8em;
+  }
+
+  p#track-name {
+    margin: 5% 0;
+    text-align: left;
+    font-size: 0.8em;
+  }
+
+  .dropdown-container .dropdown-menu li {
+    font-size: 0.8em;
+  }
+
+  select {
+    font-size: 0.8em;
+  }
+}
+
+/* Laptops & Monitors */
+@media screen and (min-width: 1023px) {
+  .content-container {
+    width: 90vw;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .buttons {
+    width: 90vw;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .centered-text {
+    min-width: 40%;
+    max-width: none;
+  }
+
+  .centered-text h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .centered-text p {
+    font-size: 0.8em;
+    margin-bottom: 15px;
+    margin-top: 0;
+  }
+
+  #sketch-container {
+    min-width: 85%;
+    max-width: none;
+  }
+
+  #canvas-container {
+    flex: auto;
+    min-width: 100%;
+    max-height: 512px;
+    margin: 0;
+  }
+
+  #canvas {
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+  }
+
+  .row {
+    min-width: 100%;
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .row .col {
+    min-width: 80%;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .row .col .dropdown-container {
+    flex: 0 0 25%;
+    min-width: 320px;
+    max-width: 420px;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  .dropdown-container .dropdown-toggle {
+    padding: 5px 20px;
+  }
+
+  .dropdown-menu::before,
+  .dropdown-toggle::before {
+    top: 50%;
+    left: 87%;
+  }
+
+  #menu-text {
+    min-width: 80%;
+    max-width: none;
+  }
+
+  p#menu-text {
+    margin: 2% 0;
+    text-align: left;
+    font-size: 0.6em;
+  }
+
+  p#album-name {
+    margin: 2% 0;
+    text-align: left;
+    font-size: 0.6em;
+  }
+
+  p#track-name {
+    margin: 2% 0;
+    text-align: left;
+    font-size: 0.6em;
+  }
+
+  .dropdown-container .dropdown-menu li {
+    font-size: 0.6em;
+  }
+
+  select {
+    font-size: 0.8em;
+  }
+}

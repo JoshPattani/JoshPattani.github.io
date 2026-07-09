@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ChromaFreq: Harmonizing Sound and Color</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="fileHandler.js"></script>
+    <script src="sketch.js"></script>
+    <script src="/libraries/p5/lib/p5.js"></script>
+    <script src="/libraries/p5/lib/addons/p5.sound.js"></script>
+  </head>
+
+  <body>
+    <!-- Main article -->
+    <article class="content-container">
+      <!-- Title Container -->
+      <div class="centered-text">
+        <h1>ChromaFreq</h1>
+        <p>A tool for Harmonizing Sound and Color.</p>
+      </div>
+      <!-- Sketch Container -->
+      <div id="sketch-container">
+        <!-- Canvas -->
+        <div id="canvas-container">
+          <img
+            id="album-cover"
+            src="/atls4141_color/assets/coverImg.png"
+            alt="Album Cover Placeholder"
+          />
+        </div>
+        <!-- Dropdown Menu -->
+        <div id="form-box" class="row">
+          <div class="col">
+            <!-- Bordered Gradient Dropdown-->
+            <div
+              id="select-container"
+              class="dropdown-container dropdown-gradient"
+            >
+              <!-- Dropdown Toggle -->
+              <div id="select-toggle" class="dropdown-toggle click-dropdown">
+                <p id="menu-text">Select Album</p>
+              </div>
+              <!-- Dynamic Dropdown Menu -->
+              <select id="album-selection-dropdown" class="dropdown-menu">
+                <option value="">Select Album</option>
+                <!-- JavaScript will populate additional options here -->
+              </select>
+              <!-- track selection dropdown - initialized with visibility off -->
+              <select
+                id="track-selection-dropdown"
+                class="dropdown-menu"
+                style="visibility: hidden"
+              >
+                <option value="">Select Track</option>
+                <!-- JavaScript will populate additional options here -->
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="info-box" class="centered-text">
+        <p>Select an album and track to begin a Synesthesia Experience!</p>
+      </div>
+    </article>
+    <!-- Interactive Buttons -->
+    <article class="buttons">
+      <!-- Volume Slider -->
+      <div id="slider-container" class="gui-controls"></div>
+      <div id="interactive_gui" class="gui-controls">
+        <!-- Controls -->
+        <!-- stop button -->
+        <div id="stop-button">
+          <button id="stop">Stop</button>
+        </div>
+
+        <!-- mute button -->
+        <div id="mute-button">
+          <button id="mute">Mute</button>
+        </div>
+
+        <!-- reset button -->
+        <div id="reset-button">
+          <button id="reset">Reset</button>
+        </div>
+      </div>
+    </article>
+    <script src="main.js"></script>
+  </body>
+</html>
