@@ -14,7 +14,7 @@
     <main class="app-shell">
       <header class="masthead" aria-labelledby="page-title">
         <a class="back-link" href="../../">Portfolio</a>
-        <div>
+        <div class="masthead-title">
           <p class="eyebrow">Synesthetic spectrum lab</p>
           <h1 id="page-title">ChromaFreq</h1>
         </div>
@@ -54,8 +54,9 @@
             <div class="source-panels">
               <div data-source-panel="demo">
                 <p>
-                  Generated oscillator tones provide a rights-safe demo source
-                  for testing the color engine.
+                  Reference Sine Sweep generates a logarithmic 40 Hz to 16 kHz
+                  sine tone in the browser, making the full color mapping easy
+                  to inspect without external audio.
                 </p>
               </div>
 
@@ -134,6 +135,18 @@
                 <dd data-readout="centroid">0 Hz</dd>
               </div>
               <div>
+                <dt>Color source</dt>
+                <dd data-readout="color-source">Silent</dd>
+              </div>
+              <div>
+                <dt>Color driver</dt>
+                <dd data-readout="color-driver">Dominant Peak</dd>
+              </div>
+              <div>
+                <dt>Reference tone</dt>
+                <dd data-readout="reference-tone">Not active</dd>
+              </div>
+              <div>
                 <dt>Mapped wavelength</dt>
                 <dd data-readout="wavelength">0 nm</dd>
               </div>
@@ -162,6 +175,16 @@
               <h2>Mapping</h2>
             </div>
 
+            <label class="select-control" for="visual-mode">
+              <span>Visual mode</span>
+              <select id="visual-mode" data-control="visual-mode"></select>
+            </label>
+
+            <label class="select-control" for="color-driver">
+              <span>Color driver</span>
+              <select id="color-driver" data-control="color-driver"></select>
+            </label>
+
             <label class="select-control" for="mapping-mode">
               <span>Color logic</span>
               <select id="mapping-mode" data-control="mapping-mode"></select>
@@ -186,27 +209,34 @@
                 <option value="8192">8192</option>
               </select>
             </label>
+
+            <button type="button" id="snapshot-button" class="secondary-action">
+              Export PNG Snapshot
+            </button>
           </section>
         </aside>
       </section>
 
       <section class="project-notes" aria-labelledby="about-title">
         <div>
-          <p class="eyebrow">Project note</p>
+          <p class="eyebrow">How it works</p>
           <h2 id="about-title">Sound as visible structure</h2>
         </div>
-        <p>
-          V2 keeps the original ATLAS color-study idea intact while replacing
-          the prototype playback stack with a clearer Web Audio architecture.
-          The engine analyzes local files, generated test tones, or live input,
-          then maps frequency information into visible-light wavelengths and RGB
-          values. Spotify is reserved for context only and is never treated as a
-          raw audio source.
-        </p>
+        <div class="notes-copy">
+          <p>
+            The analysis path is <code>audio frequency -&gt; mapped wavelength -&gt; RGB/HEX color</code>.
+            The selected color driver chooses whether that frequency comes from
+            the dominant FFT peak, the spectral centroid, or a weighted band
+            blend before the wavelength-to-RGB helper renders the result.
+          </p>
+          <p>
+            Spotify remains companion metadata only. It is not used as an audio
+            analysis source, and protected streams are not recorded or decoded.
+          </p>
+        </div>
       </section>
     </main>
 
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
-

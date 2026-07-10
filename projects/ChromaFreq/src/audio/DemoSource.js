@@ -1,17 +1,7 @@
-const DEMO_SEQUENCE = [
-  82.41,
-  110,
-  146.83,
-  196,
-  261.63,
-  329.63,
-  392,
-  523.25,
-  659.25,
-  880,
-  1174.66,
-  1567.98,
-];
+const SWEEP_START_HZ = 40;
+const SWEEP_END_HZ = 16_000;
+const SWEEP_DURATION_SECONDS = 18;
+const SWEEP_RESET_FADE_SECONDS = 0.18;
 
 export class DemoSource {
   constructor() {
@@ -19,14 +9,14 @@ export class DemoSource {
     this.isPlaying = false;
     this.engine = null;
     this.outputNode = null;
-    this.oscillators = [];
-    this.stepTimer = null;
-    this.stepIndex = 0;
+    this.oscillator = null;
+    this.loopTimer = null;
+    this.sweepStartedAt = 0;
     this.metadata = {
-      title: "Generated tone study",
-      artist: "ChromaFreq synthetic source",
-      duration: null,
-      detail: "Oscillator sequence, no copyrighted audio asset",
+      title: "Reference Sine Sweep",
+      artist: "ChromaFreq generated source",
+      duration: SWEEP_DURATION_SECONDS,
+      detail: "Log sweep from 40 Hz to 16 kHz, generated in-browser",
     };
   }
 
@@ -38,56 +28,90 @@ export class DemoSource {
     if (this.isPlaying || !this.engine) return;
 
     const { audioContext } = this.engine;
-    const primary = audioContext.createOscillator();
-    const harmonic = audioContext.createOscillator();
-    const toneGain = audioContext.createGain();
-    const harmonicGain = audioContext.createGain();
+    const oscillator = audioContext.createOscillator();
     const filter = audioContext.createBiquadFilter();
+    const toneGain = audioContext.createGain();
     const output = audioContext.createGain();
 
-    primary.type = "sine";
-    harmonic.type = "triangle";
+    oscillator.type = "sine";
     filter.type = "lowpass";
-    filter.frequency.value = 2200;
-    filter.Q.value = 0.6;
-    toneGain.gain.value = 0.15;
-    harmonicGain.gain.value = 0.035;
-    output.gain.value = 0.85;
+    filter.frequency.value = SWEEP_END_HZ;
+    filter.Q.value = 0.2;
+    toneGain.gain.value = 0.22;
+    output.gain.value = 0.001;
 
-    primary.connect(toneGain);
-    harmonic.connect(harmonicGain);
+    oscillator.connect(toneGain);
     toneGain.connect(filter);
-    harmonicGain.connect(filter);
     filter.connect(output);
 
     this.outputNode = output;
-    this.oscillators = [primary, harmonic];
+    this.oscillator = oscillator;
     this.engine.connectSourceNode(output, { monitor: true });
 
-    const now = audioContext.currentTime;
-    primary.frequency.setValueAtTime(DEMO_SEQUENCE[0], now);
-    harmonic.frequency.setValueAtTime(DEMO_SEQUENCE[0] * 1.5, now);
-    primary.start();
-    harmonic.start();
-
-    this.stepIndex = 0;
-    this.stepTimer = window.setInterval(() => this.advanceSequence(), 760);
+    this.scheduleSweep(audioContext.currentTime + 0.025);
+    oscillator.start();
     this.isPlaying = true;
   }
 
-  advanceSequence() {
-    if (!this.engine || !this.isPlaying) return;
+  scheduleSweep(startTime) {
+    if (!this.engine || !this.oscillator || !this.outputNode) return;
 
     const { audioContext } = this.engine;
-    this.stepIndex = (this.stepIndex + 1) % DEMO_SEQUENCE.length;
-    const nextFrequency = DEMO_SEQUENCE[this.stepIndex];
-    const now = audioContext.currentTime;
-    const [primary, harmonic] = this.oscillators;
+    const safeStart = Math.max(startTime, audioContext.currentTime + 0.01);
+    const endTime = safeStart + SWEEP_DURATION_SECONDS;
+    const fadeOutTime = Math.max(
+      safeStart + SWEEP_RESET_FADE_SECONDS,
+      endTime - SWEEP_RESET_FADE_SECONDS
+    );
 
-    primary.frequency.cancelScheduledValues(now);
-    harmonic.frequency.cancelScheduledValues(now);
-    primary.frequency.setTargetAtTime(nextFrequency, now, 0.08);
-    harmonic.frequency.setTargetAtTime(nextFrequency * 1.5, now, 0.08);
+    this.sweepStartedAt = safeStart;
+
+    this.oscillator.frequency.cancelScheduledValues(safeStart);
+    this.oscillator.frequency.setValueAtTime(SWEEP_START_HZ, safeStart);
+    this.oscillator.frequency.exponentialRampToValueAtTime(
+      SWEEP_END_HZ,
+      endTime
+    );
+
+    this.outputNode.gain.cancelScheduledValues(safeStart);
+    this.outputNode.gain.setValueAtTime(0.001, safeStart);
+    this.outputNode.gain.linearRampToValueAtTime(0.85, safeStart + SWEEP_RESET_FADE_SECONDS);
+    this.outputNode.gain.setValueAtTime(0.85, fadeOutTime);
+    this.outputNode.gain.linearRampToValueAtTime(0.001, endTime);
+
+    if (this.loopTimer) {
+      window.clearTimeout(this.loopTimer);
+    }
+
+    this.loopTimer = window.setTimeout(() => {
+      this.scheduleSweep(this.engine.audioContext.currentTime + 0.03);
+    }, SWEEP_DURATION_SECONDS * 1000);
+  }
+
+  getAnalysisHints() {
+    if (!this.isPlaying || !this.engine?.audioContext || !this.sweepStartedAt) {
+      return {
+        sweepStartHz: SWEEP_START_HZ,
+        sweepEndHz: SWEEP_END_HZ,
+        sweepFrequencyHz: 0,
+        sweepProgress: 0,
+      };
+    }
+
+    const elapsed = Math.max(
+      0,
+      this.engine.audioContext.currentTime - this.sweepStartedAt
+    );
+    const progress = Math.min(elapsed / SWEEP_DURATION_SECONDS, 1);
+    const sweepFrequencyHz =
+      SWEEP_START_HZ * Math.pow(SWEEP_END_HZ / SWEEP_START_HZ, progress);
+
+    return {
+      sweepStartHz: SWEEP_START_HZ,
+      sweepEndHz: SWEEP_END_HZ,
+      sweepFrequencyHz,
+      sweepProgress: progress,
+    };
   }
 
   async pause() {
@@ -95,17 +119,21 @@ export class DemoSource {
   }
 
   async stop() {
-    if (this.stepTimer) {
-      window.clearInterval(this.stepTimer);
-      this.stepTimer = null;
+    if (this.loopTimer) {
+      window.clearTimeout(this.loopTimer);
+      this.loopTimer = null;
     }
 
-    for (const oscillator of this.oscillators) {
-      try {
-        oscillator.stop();
-      } catch {
-        // Oscillators can only be stopped once.
-      }
+    try {
+      this.outputNode?.gain.cancelScheduledValues(this.engine?.audioContext?.currentTime ?? 0);
+    } catch {
+      // Safe to ignore when the context is gone.
+    }
+
+    try {
+      this.oscillator?.stop();
+    } catch {
+      // Oscillators can only be stopped once.
     }
 
     try {
@@ -116,7 +144,8 @@ export class DemoSource {
 
     this.engine?.disconnectSourceNode();
     this.outputNode = null;
-    this.oscillators = [];
+    this.oscillator = null;
+    this.sweepStartedAt = 0;
     this.isPlaying = false;
   }
 

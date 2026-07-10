@@ -1,5 +1,35 @@
 import { DEFAULT_MAPPING_MODE, mapFrequencyToColor } from "../color/colorMapping.js";
 
+export const COLOR_DRIVERS = {
+  dominantPeak: {
+    id: "dominant-peak",
+    label: "Dominant Peak",
+  },
+  spectralCentroid: {
+    id: "spectral-centroid",
+    label: "Spectral Centroid",
+  },
+  weightedBandBlend: {
+    id: "weighted-band-blend",
+    label: "Weighted Band Blend",
+  },
+};
+
+export const DEFAULT_COLOR_DRIVER = COLOR_DRIVERS.dominantPeak.id;
+
+const BAND_DEFINITIONS = [
+  { id: "bass", min: 24, max: 250, center: 96 },
+  { id: "lowMid", min: 250, max: 800, center: 450 },
+  { id: "mid", min: 800, max: 2500, center: 1350 },
+  { id: "presence", min: 2500, max: 6000, center: 3800 },
+  { id: "air", min: 6000, max: 16_000, center: 9800 },
+];
+
+const SILENCE_THRESHOLDS = {
+  peakValue: 8,
+  rms: 0.008,
+};
+
 export class AudioEngine extends EventTarget {
   constructor(options = {}) {
     super();
@@ -7,6 +37,9 @@ export class AudioEngine extends EventTarget {
     this.smoothingTimeConstant = options.smoothingTimeConstant ?? 0.84;
     this.volume = options.volume ?? 0.82;
     this.sensitivity = options.sensitivity ?? 1;
+    this.colorSmoothing = options.colorSmoothing ?? 0.18;
+    this.smoothedColorFrequencyHz = 0;
+    this.previousColorDriver = DEFAULT_COLOR_DRIVER;
 
     this.audioContext = null;
     this.analyser = null;
@@ -153,9 +186,12 @@ export class AudioEngine extends EventTarget {
     }
   }
 
-  getAnalysisFrame(mappingMode = DEFAULT_MAPPING_MODE) {
+  getAnalysisFrame(
+    mappingMode = DEFAULT_MAPPING_MODE,
+    colorDriver = DEFAULT_COLOR_DRIVER
+  ) {
     if (!this.analyser || !this.frequencyData || !this.timeDomainData) {
-      return createEmptyFrame(mappingMode);
+      return createEmptyFrame(mappingMode, colorDriver);
     }
 
     this.analyser.getByteFrequencyData(this.frequencyData);
@@ -168,10 +204,24 @@ export class AudioEngine extends EventTarget {
       this.sensitivity
     );
     const waveformAnalysis = analyzeWaveform(this.timeDomainData);
-    const mappedColor = mapFrequencyToColor(
-      frequencyAnalysis.dominantFrequencyHz,
-      mappingMode
+    const normalizedDriver = getColorDriver(colorDriver);
+    const hasSignal =
+      frequencyAnalysis.peakValue >= SILENCE_THRESHOLDS.peakValue ||
+      waveformAnalysis.rms >= SILENCE_THRESHOLDS.rms;
+    const rawColorFrequencyHz = hasSignal
+      ? selectColorDriverFrequency(frequencyAnalysis, normalizedDriver.id)
+      : 0;
+
+    if (this.previousColorDriver !== normalizedDriver.id) {
+      this.smoothedColorFrequencyHz = rawColorFrequencyHz;
+      this.previousColorDriver = normalizedDriver.id;
+    }
+
+    const colorFrequencyHz = this.smoothColorFrequency(
+      rawColorFrequencyHz,
+      hasSignal
     );
+    const mappedColor = mapFrequencyToColor(colorFrequencyHz, mappingMode);
 
     return {
       frequencyData: this.frequencyData,
@@ -179,13 +229,41 @@ export class AudioEngine extends EventTarget {
       sampleRate: this.audioContext.sampleRate,
       fftSize: this.analyser.fftSize,
       source: this.currentSource?.metadata ?? null,
+      sourceHints: this.currentSource?.getAnalysisHints?.() ?? null,
       state: this.getState(),
       analysis: {
         ...frequencyAnalysis,
         rms: waveformAnalysis.rms,
+        hasSignal,
+        colorDriver: normalizedDriver.id,
+        colorDriverLabel: normalizedDriver.label,
+        rawColorFrequencyHz,
+        colorFrequencyHz,
       },
       color: mappedColor,
     };
+  }
+
+  smoothColorFrequency(frequencyHz, hasSignal) {
+    if (!hasSignal || !frequencyHz) {
+      this.smoothedColorFrequencyHz *= 0.72;
+      if (this.smoothedColorFrequencyHz < 1) {
+        this.smoothedColorFrequencyHz = 0;
+      }
+      return this.smoothedColorFrequencyHz;
+    }
+
+    if (!this.smoothedColorFrequencyHz) {
+      this.smoothedColorFrequencyHz = frequencyHz;
+      return this.smoothedColorFrequencyHz;
+    }
+
+    const currentLog = Math.log(Math.max(1, this.smoothedColorFrequencyHz));
+    const targetLog = Math.log(Math.max(1, frequencyHz));
+    this.smoothedColorFrequencyHz = Math.exp(
+      currentLog + (targetLog - currentLog) * this.colorSmoothing
+    );
+    return this.smoothedColorFrequencyHz;
   }
 
   getState() {
@@ -227,15 +305,33 @@ export function analyzeFrequencyData(
   let weightedFrequency = 0;
   let totalWeight = 0;
   let energy = 0;
+  const bands = BAND_DEFINITIONS.map((band) => ({
+    ...band,
+    energy: 0,
+    weight: 0,
+    bins: 0,
+  }));
 
   for (let bin = minBin; bin <= maxBin; bin += 1) {
     const value = frequencyData[bin];
+    const frequencyHz = bin * binWidth;
     const normalized = value / 255;
     const weighted = Math.pow(Math.max(0, normalized - 0.025), 1.15);
 
     energy += normalized;
-    weightedFrequency += bin * binWidth * weighted;
+    weightedFrequency += frequencyHz * weighted;
     totalWeight += weighted;
+
+    const band = bands.find(
+      (candidate) =>
+        frequencyHz >= candidate.min && frequencyHz < candidate.max
+    );
+
+    if (band) {
+      band.energy += normalized;
+      band.weight += weighted;
+      band.bins += 1;
+    }
 
     if (value > peakValue) {
       peakValue = value;
@@ -249,10 +345,28 @@ export function analyzeFrequencyData(
   const dominantFrequencyHz = peakValue < 6 ? 0 : peakBin * binWidth;
   const spectralCentroidHz =
     totalWeight > 0 ? weightedFrequency / totalWeight : dominantFrequencyHz;
+  const bandWeightTotal = bands.reduce((sum, band) => sum + band.weight, 0);
+  const bandBlendFrequencyHz =
+    bandWeightTotal > 0
+      ? Math.exp(
+          bands.reduce(
+            (sum, band) => sum + Math.log(band.center) * band.weight,
+            0
+          ) / bandWeightTotal
+        )
+      : spectralCentroidHz;
+  const bandLevels = Object.fromEntries(
+    bands.map((band) => [
+      band.id,
+      clamp01((band.energy / Math.max(1, band.bins)) * sensitivity),
+    ])
+  );
 
   return {
     dominantFrequencyHz,
     spectralCentroidHz,
+    bandBlendFrequencyHz,
+    bandLevels,
     peakValue,
     amplitude,
     energy: normalizedEnergy,
@@ -273,13 +387,35 @@ export function analyzeWaveform(timeDomainData) {
   };
 }
 
-function createEmptyFrame(mappingMode) {
+export function getColorDriver(driver) {
+  return (
+    Object.values(COLOR_DRIVERS).find((candidate) => candidate.id === driver) ??
+    COLOR_DRIVERS.dominantPeak
+  );
+}
+
+export function selectColorDriverFrequency(analysis, driver) {
+  if (driver === COLOR_DRIVERS.spectralCentroid.id) {
+    return analysis.spectralCentroidHz || 0;
+  }
+
+  if (driver === COLOR_DRIVERS.weightedBandBlend.id) {
+    return analysis.bandBlendFrequencyHz || 0;
+  }
+
+  return analysis.dominantFrequencyHz || 0;
+}
+
+function createEmptyFrame(mappingMode, colorDriver = DEFAULT_COLOR_DRIVER) {
+  const normalizedDriver = getColorDriver(colorDriver);
+
   return {
     frequencyData: new Uint8Array(0),
     timeDomainData: new Uint8Array(0),
     sampleRate: 0,
     fftSize: 0,
     source: null,
+    sourceHints: null,
     state: {
       hasContext: false,
       sourceMode: "none",
@@ -294,11 +430,18 @@ function createEmptyFrame(mappingMode) {
     analysis: {
       dominantFrequencyHz: 0,
       spectralCentroidHz: 0,
+      bandBlendFrequencyHz: 0,
+      bandLevels: {},
       peakValue: 0,
       amplitude: 0,
       energy: 0,
       binWidth: 0,
       rms: 0,
+      hasSignal: false,
+      colorDriver: normalizedDriver.id,
+      colorDriverLabel: normalizedDriver.label,
+      rawColorFrequencyHz: 0,
+      colorFrequencyHz: 0,
     },
     color: mapFrequencyToColor(0, mappingMode),
   };
@@ -307,5 +450,3 @@ function createEmptyFrame(mappingMode) {
 function clamp01(value) {
   return Math.min(Math.max(Number(value) || 0, 0), 1);
 }
-
-

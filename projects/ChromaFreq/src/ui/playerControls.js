@@ -18,6 +18,8 @@ export class PlayerControls {
     this.sensitivity = $("[data-control='sensitivity']");
     this.fftSize = $("[data-control='fft-size']");
     this.mappingMode = $("[data-control='mapping-mode']");
+    this.visualMode = $("[data-control='visual-mode']");
+    this.colorDriver = $("[data-control='color-driver']");
 
     this.playButton.addEventListener("click", () => callbacks.onPlay?.());
     this.pauseButton.addEventListener("click", () => callbacks.onPause?.());
@@ -37,6 +39,12 @@ export class PlayerControls {
     this.fftSize.addEventListener("change", () => callbacks.onFftSize?.(this.fftSize.value));
     this.mappingMode.addEventListener("change", () =>
       callbacks.onMappingMode?.(this.mappingMode.value)
+    );
+    this.visualMode.addEventListener("change", () =>
+      callbacks.onVisualMode?.(this.visualMode.value)
+    );
+    this.colorDriver.addEventListener("change", () =>
+      callbacks.onColorDriver?.(this.colorDriver.value)
     );
 
     this.bindDropzone();
@@ -97,4 +105,3 @@ export class PlayerControls {
     this.stopButton.disabled = !state || state.sourceMode === "none";
   }
 }
-

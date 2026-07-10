@@ -1,4 +1,8 @@
-import { AudioEngine } from "./audio/AudioEngine.js";
+import {
+  AudioEngine,
+  COLOR_DRIVERS,
+  DEFAULT_COLOR_DRIVER,
+} from "./audio/AudioEngine.js";
 import { DemoSource } from "./audio/DemoSource.js";
 import { LiveInputSource } from "./audio/LiveInputSource.js";
 import { LocalFileSource } from "./audio/LocalFileSource.js";
@@ -8,7 +12,16 @@ import { AnalysisReadout } from "./ui/analysisReadout.js";
 import { $ } from "./ui/dom.js";
 import { PlayerControls } from "./ui/playerControls.js";
 import { SourceSelector } from "./ui/sourceSelector.js";
-import { ChromaFreqVisualizer } from "./visuals/ChromaFreqVisualizer.js";
+import {
+  ChromaFreqVisualizer,
+  DEFAULT_VISUAL_MODE,
+  VISUAL_MODES,
+} from "./visuals/ChromaFreqVisualizer.js";
+
+const SILENT_THEME = {
+  hex: "#93d8b6",
+  rgb: [147, 216, 182],
+};
 
 const engine = new AudioEngine();
 const spotify = new SpotifyMetadataSource();
@@ -18,6 +31,8 @@ const app = {
   activeSourceMode: "demo",
   selectedFile: null,
   mappingMode: DEFAULT_MAPPING_MODE,
+  visualMode: DEFAULT_VISUAL_MODE,
+  colorDriver: DEFAULT_COLOR_DRIVER,
   isBooted: false,
 };
 
@@ -33,10 +48,21 @@ const controls = new PlayerControls($("#control-panel"), {
   onMappingMode: (value) => {
     app.mappingMode = value;
   },
+  onVisualMode: (value) => {
+    app.visualMode = value;
+  },
+  onColorDriver: (value) => {
+    app.colorDriver = value;
+  },
 });
 
 const sourceSelector = new SourceSelector($("#source-selector"), {
   onChange: (mode) => runAction(() => selectSourceMode(mode)),
+});
+
+$("#snapshot-button").addEventListener("click", () => {
+  visualizer.downloadSnapshot();
+  controls.setStatus("Canvas snapshot exported as PNG.");
 });
 
 engine.addEventListener("statechange", (event) => {
@@ -48,14 +74,16 @@ requestAnimationFrame(renderLoop);
 
 async function initialize() {
   populateMappingModes();
+  populateVisualModes();
+  populateColorDrivers();
   controls.setSourceMode("demo");
   controls.setTrack({
-    title: "Generated tone study",
-    artist: "ChromaFreq synthetic source",
-    duration: null,
-    detail: "Ready",
+    title: "Reference Sine Sweep",
+    artist: "ChromaFreq generated source",
+    duration: 18,
+    detail: "Log sweep from 40 Hz to 16 kHz, generated in-browser",
   });
-  controls.setStatus("Demo source ready. Press Play to start generated tones.");
+  controls.setStatus("Reference sine sweep ready. Press Play to start.");
   controls.setPlaybackState(engine.getState());
 
   if (!spotify.isConfigured) {
@@ -76,6 +104,32 @@ function populateMappingModes() {
   }
 }
 
+function populateVisualModes() {
+  const select = $("#visual-mode");
+  select.innerHTML = "";
+
+  for (const mode of Object.values(VISUAL_MODES)) {
+    const option = document.createElement("option");
+    option.value = mode.id;
+    option.textContent = mode.label;
+    option.selected = mode.id === DEFAULT_VISUAL_MODE;
+    select.appendChild(option);
+  }
+}
+
+function populateColorDrivers() {
+  const select = $("#color-driver");
+  select.innerHTML = "";
+
+  for (const driver of Object.values(COLOR_DRIVERS)) {
+    const option = document.createElement("option");
+    option.value = driver.id;
+    option.textContent = driver.label;
+    option.selected = driver.id === DEFAULT_COLOR_DRIVER;
+    select.appendChild(option);
+  }
+}
+
 async function selectSourceMode(mode) {
   app.activeSourceMode = mode;
   controls.setSourceMode(mode);
@@ -83,7 +137,7 @@ async function selectSourceMode(mode) {
   if (mode === "demo") {
     await engine.setSource(new DemoSource());
     controls.setTrack(engine.currentSource.metadata);
-    controls.setStatus("Generated tone demo selected.");
+    controls.setStatus("Reference sine sweep selected.");
     return;
   }
 
@@ -157,8 +211,8 @@ async function playActiveSource() {
 }
 
 function renderLoop() {
-  const frame = engine.getAnalysisFrame(app.mappingMode);
-  visualizer.render(frame);
+  const frame = engine.getAnalysisFrame(app.mappingMode, app.colorDriver);
+  visualizer.render(frame, app.visualMode);
   readout.update(frame);
   updateAnalysisTheme(frame);
   requestAnimationFrame(renderLoop);
@@ -166,8 +220,12 @@ function renderLoop() {
 
 function updateAnalysisTheme(frame) {
   const root = document.documentElement;
-  root.style.setProperty("--analysis-color", frame.color.hex);
-  root.style.setProperty("--analysis-rgb", frame.color.rgb.join(" "));
+  const theme = frame.analysis.hasSignal
+    ? { hex: frame.color.hex, rgb: frame.color.rgb }
+    : SILENT_THEME;
+
+  root.style.setProperty("--analysis-color", theme.hex);
+  root.style.setProperty("--analysis-rgb", theme.rgb.join(" "));
   root.style.setProperty("--analysis-energy", frame.analysis.energy.toFixed(3));
 }
 
@@ -178,5 +236,3 @@ async function runAction(action) {
     controls.setStatus(error.message || "Something went wrong.");
   }
 }
-
-
