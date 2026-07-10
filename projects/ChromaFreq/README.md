@@ -7,7 +7,9 @@ explore the space between music, perception, and light.
 The original ChromaFreq prototype was built for an ATLAS Institute color study
 course with p5.js and p5.sound. V2 keeps the concept but moves the runtime to
 plain browser-native Web Audio modules so it can live cleanly inside this static
-portfolio site.
+portfolio site. The app is linked directly from the portfolio homepage at
+`/projects/ChromaFreq/` and stays GitHub Pages friendly with relative ES module,
+CSS, and asset paths.
 
 ## Run locally
 
@@ -24,7 +26,8 @@ http://localhost:8080/projects/ChromaFreq/
 ```
 
 The app uses ES modules, so serve it over HTTP instead of opening the HTML file
-directly from disk.
+directly from disk. The main portfolio homepage card links to the same
+`/projects/ChromaFreq/` route.
 
 ## Tests
 
@@ -66,10 +69,13 @@ The conversion path is:
 audio frequency -> mapped wavelength -> RGB/HEX color
 ```
 
-The Color driver setting chooses which analysis value feeds that path:
+The Color driver setting chooses which analysis value feeds that path. Spectral
+Centroid is the default because it produces a smoother, more musically
+representative color response than a single peak bin:
 
+- Spectral Centroid: weighted center of spectral energy and the default color
+  driver.
 - Dominant Peak: strongest FFT bin in the analyzed range.
-- Spectral Centroid: weighted center of spectral energy.
 - Weighted Band Blend: coarse bass, mid, presence, and air bands blended by
   energy.
 

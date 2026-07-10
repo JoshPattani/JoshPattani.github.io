@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {
   COLOR_DRIVERS,
+  DEFAULT_COLOR_DRIVER,
   analyzeFrequencyData,
   getColorDriver,
   selectColorDriverFrequency,
@@ -24,6 +25,8 @@ const defaultMapping = mapFrequencyToColor(440, DEFAULT_MAPPING_MODE);
 assert.equal(defaultMapping.mode, MAPPING_MODES.perceptualLog.id);
 assert.equal(Number.isFinite(defaultMapping.wavelengthNm), true);
 assert.equal(defaultMapping.rgb.length, 3);
+assert.equal(DEFAULT_COLOR_DRIVER, COLOR_DRIVERS.spectralCentroid.id);
+assert.equal(getColorDriver().id, DEFAULT_COLOR_DRIVER);
 
 const bass = mapFrequencyToColor(80, MAPPING_MODES.perceptualLog.id);
 const treble = mapFrequencyToColor(8000, MAPPING_MODES.perceptualLog.id);
@@ -72,6 +75,6 @@ assert.equal(
   selectColorDriverFrequency(analysis, COLOR_DRIVERS.weightedBandBlend.id),
   analysis.bandBlendFrequencyHz
 );
-assert.equal(getColorDriver("unknown").id, COLOR_DRIVERS.dominantPeak.id);
+assert.equal(getColorDriver("unknown").id, DEFAULT_COLOR_DRIVER);
 
 console.log("color mapping tests passed");

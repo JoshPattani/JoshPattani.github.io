@@ -9,12 +9,14 @@
 - Modular color mapping with legacy and log modes.
 - Signal Observatory, Legacy Spectrum Sweep, and Hybrid Spectrum Field visual modes.
 - Reference Sine Sweep demo generated in-browser from 40 Hz to 16 kHz.
-- Color driver setting for Dominant Peak, Spectral Centroid, and Weighted Band Blend.
+- Color driver setting for Spectral Centroid by default, with Dominant Peak and
+  Weighted Band Blend still selectable.
 - Analysis readout that separates dominant frequency, centroid, color source,
   mapped wavelength, RGB/HEX, amplitude, mapping mode, and reference sweep tone.
 - Layout refinement for desktop viewport fit, panel scrolling, and cleaner header rhythm.
 - PNG canvas snapshot export.
 - Documentation and lightweight color/analysis tests.
+- Main portfolio homepage card linking directly to `/projects/ChromaFreq/`.
 
 ## Next
 
@@ -22,7 +24,6 @@
 - Add richer local-file metadata extraction where browser APIs allow it.
 - Tune the weighted band blend model with adjustable user-facing band weights.
 - Add visual style presets that still derive color from analysis.
-- Add a project page card/link from the main portfolio if desired.
 
 ## Later
 

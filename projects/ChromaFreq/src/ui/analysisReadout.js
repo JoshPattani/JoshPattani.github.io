@@ -33,7 +33,10 @@ export class AnalysisReadout {
       "colorSource",
       hasSignal ? formatFrequency(analysis.colorFrequencyHz) : "Silent"
     );
-    this.setField("colorDriver", analysis.colorDriverLabel ?? "Dominant Peak");
+    this.setField(
+      "colorDriver",
+      analysis.colorDriverLabel ?? "Spectral Centroid"
+    );
     this.setField(
       "referenceTone",
       sourceHints?.sweepFrequencyHz

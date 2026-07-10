@@ -15,7 +15,7 @@ export const COLOR_DRIVERS = {
   },
 };
 
-export const DEFAULT_COLOR_DRIVER = COLOR_DRIVERS.dominantPeak.id;
+export const DEFAULT_COLOR_DRIVER = COLOR_DRIVERS.spectralCentroid.id;
 
 const BAND_DEFINITIONS = [
   { id: "bass", min: 24, max: 250, center: 96 },
@@ -390,7 +390,7 @@ export function analyzeWaveform(timeDomainData) {
 export function getColorDriver(driver) {
   return (
     Object.values(COLOR_DRIVERS).find((candidate) => candidate.id === driver) ??
-    COLOR_DRIVERS.dominantPeak
+    COLOR_DRIVERS.spectralCentroid
   );
 }
 
